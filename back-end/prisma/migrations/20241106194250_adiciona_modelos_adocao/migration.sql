@@ -1,8 +1,8 @@
 -- CreateTable
 CREATE TABLE "adocoes" (
-    "id" SERIAL NOT NULL,
-    "pet_id" INTEGER NOT NULL,
-    "adotante_id" INTEGER NOT NULL,
+    "id" TEXT NOT NULL,
+    "pet_id" TEXT NOT NULL,
+    "adotante_id" TEXT NOT NULL,
     "data_adocao" DATE NOT NULL,
 
     CONSTRAINT "adocoes_pkey" PRIMARY KEY ("id")
@@ -10,18 +10,18 @@ CREATE TABLE "adocoes" (
 
 -- CreateTable
 CREATE TABLE "adotantes" (
-    "id" SERIAL NOT NULL,
+    "id" TEXT NOT NULL,
     "nome" VARCHAR(100) NOT NULL,
     "email" VARCHAR(100) NOT NULL,
-    "telefone" VARCHAR(20),
-    "endereco" VARCHAR(255),
+    "telefone" VARCHAR(20) NOT NULL,
+    "endereco" VARCHAR(255) NOT NULL,
 
     CONSTRAINT "adotantes_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
 CREATE TABLE "pets" (
-    "id" SERIAL NOT NULL,
+    "id" TEXT NOT NULL,
     "nome" VARCHAR(100) NOT NULL,
     "especie" VARCHAR(50) NOT NULL,
     "idade" INTEGER NOT NULL,
