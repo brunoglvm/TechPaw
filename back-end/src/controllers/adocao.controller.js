@@ -9,14 +9,14 @@ class AdocaoController {
         data_adocao: dataAdocao,
       } = req.body;
 
-      const petExists = await prismaClient.pets.findUnique({
+      const petInfo = await prismaClient.pets.findUnique({
         where: { id: petId },
       });
-      const adotanteExists = await prismaClient.adotantes.findUnique({
+      const adotanteInfo = await prismaClient.adotantes.findUnique({
         where: { id: adotanteId },
       });
 
-      if (!petExists || !adotanteExists) {
+      if (!petInfo || !adotanteInfo) {
         return res
           .status(404)
           .json({ message: "Pet ou adotante não encontrado." });
@@ -59,9 +59,7 @@ class AdocaoController {
 
     try {
       const adocao = await prismaClient.adocoes.findUnique({
-        where: {
-          id,
-        },
+        where: { id },
         include: {
           pets: true,
           adotantes: true,
@@ -83,7 +81,32 @@ class AdocaoController {
 
   async atualizarAdocao(req, res) {}
 
-  async deletarAdocao(req, res) {}
+  async deletarAdocao(req, res) {
+    const { id } = req.params;
+
+    try {
+      const adocao = await prismaClient.adocoes.findUnique({
+        where: { id },
+      });
+
+      if (!adocao) {
+        return res.status(404).json({
+          message: "Adoção não encontrada.",
+        });
+      }
+
+      await prismaClient.adocoes.delete({
+        where: { id },
+      });
+      return res.status(200).json({
+        message: "Adoção deletada com sucesso!",
+      });
+    } catch (error) {
+      return res.status(500).json({
+        message: "Erro ao deletar a adoção.",
+      });
+    }
+  }
 }
 
 export default AdocaoController;
