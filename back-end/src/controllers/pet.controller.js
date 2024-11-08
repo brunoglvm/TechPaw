@@ -20,7 +20,28 @@ class PetController {
     }
   }
 
-  async buscarPorId(req, res) {}
+  async buscarPorId(req, res) {
+    const { id } = req.params;
+
+  try {
+    const pet = await prismaClient.pets.findUnique({
+      where: {
+        id,
+      },
+    });
+  
+    if (!pet) {
+      return res.status(404).json({
+        message: "Pet não encontrado.",
+      });
+    }
+    return res.status(200).json(pet);
+  } catch (error) {
+    return res.status(500).json({
+      message: "Erro ao buscar o pet.",
+    });
+  }
+}
 
   async atualizarPet(req, res) {}
 
