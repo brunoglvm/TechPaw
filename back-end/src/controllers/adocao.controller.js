@@ -29,7 +29,6 @@ class AdocaoController {
           data_adocao: new Date(dataAdocao),
         },
       });
-
       return res.status(201).json(novaAdocao);
     } catch (error) {
       return res.status(500).json({
@@ -41,6 +40,7 @@ class AdocaoController {
   async buscarAdocoes(req, res) {
     try {
       const adocoes = await prismaClient.adocoes.findMany();
+
       if (adocoes.length === 0) {
         return res.status(404).json({
           message: "Nenhuma adoção cadastrada.",
@@ -49,12 +49,37 @@ class AdocaoController {
       return res.status(200).json(adocoes);
     } catch (error) {
       return res.status(500).json({
-        message: "Erro ao buscar adoções.",
+        message: "Erro ao buscar as adoções.",
       });
     }
   }
 
-  async buscarPorId(req, res) {}
+  async buscarPorId(req, res) {
+    const { id } = req.params;
+
+    try {
+      const adocao = await prismaClient.adocoes.findUnique({
+        where: {
+          id,
+        },
+        include: {
+          pets: true,
+          adotantes: true,
+        },
+      });
+
+      if (!adocao) {
+        return res.status(404).json({
+          message: "Adoção não encontrada.",
+        });
+      }
+      return res.status(200).json(adocao);
+    } catch (error) {
+      return res.status(500).json({
+        message: "Erro ao buscar a adoção.",
+      });
+    }
+  }
 
   async atualizarAdocao(req, res) {}
 

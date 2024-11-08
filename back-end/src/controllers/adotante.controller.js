@@ -6,6 +6,7 @@ class AdotanteController {
   async buscarAdotantes(req, res) {
     try {
       const adotantes = await prismaClient.adotantes.findMany();
+
       if (adotantes.length === 0) {
         return res.status(404).json({
           message: "Nenhum adotante cadastrado.",
@@ -14,7 +15,7 @@ class AdotanteController {
       return res.status(200).json(adotantes);
     } catch (error) {
       return res.status(500).json({
-        message: "Erro ao buscar adotantes.",
+        message: "Erro ao buscar os adotantes.",
       });
     }
   }
