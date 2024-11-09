@@ -79,7 +79,60 @@ class AdocaoController {
     }
   }
 
-  async atualizarAdocao(req, res) {}
+  async atualizarAdocao(req, res) {
+    const { id } = req.params;
+
+    try {
+      const {
+        pet_id: petId,
+        adotante_id: adotanteId,
+        data_adocao: dataAdocao,
+      } = req.body;
+
+      const adocaoExistente = await prismaClient.adocoes.findUnique({
+        where: { id },
+      });
+      if (!adocaoExistente) {
+        return res.status(404).json({
+          message: "Adoção não encontrada.",
+        });
+      }
+
+      if (petId) {
+        const petInfo = await prismaClient.pets.findUnique({
+          where: { id: petId },
+        });
+        if (!petInfo) {
+          return res.status(404).json({ message: "Pet não encontrado." });
+        }
+      }
+
+      if (adotanteId) {
+        const adotanteInfo = await prismaClient.adotantes.findUnique({
+          where: { id: adotanteId },
+        });
+        if (!adotanteInfo) {
+          return res.status(404).json({ message: "Adotante não encontrado." });
+        }
+      }
+
+      const adocaoAtualizada = await prismaClient.adocoes.update({
+        where: { id },
+        data: {
+          pet_id: petId || adocaoExistente.pet_id,
+          adotante_id: adotanteId || adocaoExistente.adotante_id,
+          data_adocao: dataAdocao
+            ? new Date(dataAdocao)
+            : adocaoExistente.data_adocao,
+        },
+      });
+      return res.status(200).json(adocaoAtualizada);
+    } catch (error) {
+      return res.status(500).json({
+        message: "Erro ao atualizar a adoção.",
+      });
+    }
+  }
 
   async deletarAdocao(req, res) {
     const { id } = req.params;
