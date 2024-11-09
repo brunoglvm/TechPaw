@@ -1,7 +1,7 @@
 import prismaClient from "../database/prisma.client.js";
 
 class PetController {
-  async criarNovoPet(req, res) {}
+  async criarNovoPet(req, res) { }
 
   async buscarPets(req, res) {
     try {
@@ -73,7 +73,33 @@ class PetController {
     }
   }
 
-  async deletarPet(req, res) {}
+  async deletarPet(req, res) {
+    const { id } = req.params;
+
+    try {
+      const pet = await prismaClient.pets.findUnique({
+        where: { id },
+      });
+
+      if (!pet) {
+        return res.status(404).json({
+          message: "Pet não encontrado.",
+        });
+      }
+
+      await prismaClient.pets.delete({
+        where: { id },
+      });
+      return res.status(200).json({
+        message: "Pet deletado com sucesso!",
+      });
+    } catch (error) {
+      console.log(error);
+      return res.status(500).json({
+        message: "Erro ao deletar o pet.",
+      });
+    }
+  }
 }
 
 export default PetController;

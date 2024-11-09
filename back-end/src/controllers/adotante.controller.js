@@ -1,7 +1,7 @@
 import prismaClient from "../database/prisma.client.js";
 
 class AdotanteController {
-  async criarNovoAdotante(req, res) {}
+  async criarNovoAdotante(req, res) { }
 
   async buscarAdotantes(req, res) {
     try {
@@ -72,7 +72,33 @@ class AdotanteController {
     }
   }
 
-  async deletarAdotante(req, res) {}
+  async deletarAdotante(req, res) {
+    const { id } = req.params;
+
+    try {
+      const adotante = await prismaClient.adotantes.findUnique({
+        where: { id },
+      });
+
+      if (!adotante) {
+        return res.status(404).json({
+          message: "Adotante não encontrado.",
+        });
+      }
+
+      await prismaClient.adotantes.delete({
+        where: { id },
+      });
+      return res.status(200).json({
+        message: "Adotante deletado com sucesso!",
+      });
+    } catch (error) {
+      console.log(error);
+      return res.status(500).json({
+        message: "Erro ao deletar o adotante.",
+      });
+    }
+  }
 }
 
 export default AdotanteController;
