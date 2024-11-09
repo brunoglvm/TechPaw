@@ -41,7 +41,36 @@ class AdotanteController {
     }
   }
 
-  async atualizarAdotante(req, res) {}
+  async atualizarAdotante(req, res) {
+    const { id } = req.params;
+
+    try {
+      const { nome, email, telefone, endereco } = req.body;
+      const adotante = await prismaClient.adotantes.findUnique({
+        where: { id },
+      });
+      if (!adotante) {
+        return res.status(404).json({
+          message: "Adotante não encontrado.",
+        });
+      }
+
+      const adotanteAtualizado = await prismaClient.adotantes.update({
+        where: { id },
+        data: {
+          nome,
+          email,
+          telefone,
+          endereco,
+        },
+      });
+      return res.status(200).json(adotanteAtualizado);
+    } catch (error) {
+      return res.status(500).json({
+        message: "Erro ao atualizar o adotante.",
+      });
+    }
+  }
 
   async deletarAdotante(req, res) {}
 }
