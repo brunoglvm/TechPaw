@@ -1,7 +1,41 @@
 import prismaClient from "../database/prisma.client.js";
+import petValidator from "../validators/pet.validator.js";
 
 class PetController {
-  async criarNovoPet(req, res) { }
+  async criarNovoPet(req, res) {
+    try {
+      const { nome, especie, idade, descricao, status } = req.body;
+
+      const { error } = petValidator.validate(req.body, {
+        abortEarly: false,
+      });
+      if (error) {
+        const errorMsg = error.details.map((detail) => ({
+          mensagem: detail.message,
+        }));
+        return res.status(400).json({
+          mensagem: "Erro de validação.",
+          [errorMsg.length > 1 ? "erros" : "erro"]: errorMsg,
+        });
+      }
+
+      const novoPet = await prismaClient.pets.create({
+        data: {
+          nome,
+          especie,
+          idade,
+          descricao,
+          status,
+        },
+      });
+      return res.status(201).json(novoPet);
+    } catch (error) {
+      console.error(error);
+      return res.status(500).json({
+        message: "Erro ao cadastrar o pet.",
+      });
+    }
+  }
 
   async buscarPets(req, res) {
     try {
@@ -46,6 +80,20 @@ class PetController {
 
     try {
       const { nome, especie, idade, descricao, status } = req.body;
+
+      const { error } = petValidator.validate(req.body, {
+        abortEarly: false,
+      });
+      if (error) {
+        const errorMsg = error.details.map((detail) => ({
+          mensagem: detail.message,
+        }));
+        return res.status(400).json({
+          mensagem: "Erro de validação.",
+          [errorMsg.length > 1 ? "erros" : "erro"]: errorMsg,
+        });
+      }
+
       const pet = await prismaClient.pets.findUnique({
         where: { id },
       });
@@ -94,7 +142,6 @@ class PetController {
         message: "Pet deletado com sucesso!",
       });
     } catch (error) {
-      console.log(error);
       return res.status(500).json({
         message: "Erro ao deletar o pet.",
       });
