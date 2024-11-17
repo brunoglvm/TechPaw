@@ -1,10 +1,10 @@
-import "./App.css";
-import { Card } from "./components/card";
+import { Card } from "./components/Card/card";
+import "./app.css";
 
 export default function App() {
   return (
-    <div>
+    <>
       <Card />
-    </div>
+    </>
   );
 }
