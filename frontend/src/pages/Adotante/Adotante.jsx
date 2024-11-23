@@ -1,7 +1,7 @@
 import React from "react";
 import { Formulario } from "../../components/Formulario/Formulario";
 import { Card } from "../../components/Card/Card";
-import cachorro from "../../assets/cachorro1.png";
+import cachorro from "../../assets/cachorro.png";
 
 function Adotante() {
   return (
