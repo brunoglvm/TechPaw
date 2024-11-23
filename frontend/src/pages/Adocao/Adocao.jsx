@@ -1,24 +1,36 @@
 import React, { useState, useEffect } from 'react';
 
+// Importação de imagens
+import maxImage from '../../assets/max.jpg';
+import miaImage from '../../assets/mia.jpg';
+import miloImage from '../../assets/milo.jpg';
+import charlieImage from '../../assets/charlie.jpg';
+import tomImage from '../../assets/tom.jpg';
+import lunaImage from '../../assets/luna.jpg';
+import simbaImage from '../../assets/simba.jpg';
+import rexImage from '../../assets/rex.jpg';
+import bellaImage from '../../assets/bella.jpg';
+import fifiImage from '../../assets/fifi.jpg';
+
 const buscarPets = async (filters) => {
   const pets = [
-    { id: 1, nome: 'Rex', raca: 'Labrador', porte: 'Médio', idade: 3, sexo: 'Macho', tipo: 'Cachorro', foto: 'rex.jpg' },
-    { id: 2, nome: 'Fifi', raca: 'Poodle', porte: 'Pequeno', idade: 2, sexo: 'Fêmea', tipo: 'Cachorro', foto: 'fifi.jpg' },
-    { id: 3, nome: 'Milo', raca: 'Beagle', porte: 'Médio', idade: 4, sexo: 'Macho', tipo: 'Cachorro', foto: 'milo.jpg' },
-    { id: 4, nome: 'Luna', raca: 'Persa', porte: 'Pequeno', idade: 1, sexo: 'Fêmea', tipo: 'Gato', foto: 'luna.jpg' },
-    { id: 5, nome: 'Simba', raca: 'Siamês', porte: 'Médio', idade: 2, sexo: 'Macho', tipo: 'Gato', foto: 'simba.jpg' },
-    { id: 6, nome: 'Bella', raca: 'Golden Retriever', porte: 'Grande', idade: 5, sexo: 'Fêmea', tipo: 'Cachorro', foto: 'bella.jpg' },
-    { id: 7, nome: 'Tom', raca: 'Maine Coon', porte: 'Grande', idade: 3, sexo: 'Macho', tipo: 'Gato', foto: 'tom.jpg' },
-    { id: 8, nome: 'Max', raca: 'Rottweiler', porte: 'Grande', idade: 6, sexo: 'Macho', tipo: 'Cachorro', foto: 'max.jpg' },
-    { id: 9, nome: 'Mia', raca: 'Sphynx', porte: 'Pequeno', idade: 1, sexo: 'Fêmea', tipo: 'Gato', foto: 'mia.jpg' },
-    { id: 10, nome: 'Charlie', raca: 'Bulldog', porte: 'Médio', idade: 4, sexo: 'Macho', tipo: 'Cachorro', foto: 'charlie.jpg' },
+    { id: 1, nome: 'Rex', raca: 'Labrador', porte: 'Médio', idade: 3, sexo: 'Macho', tipo: 'Cachorro', foto: rexImage },
+    { id: 2, nome: 'Fifi', raca: 'Poodle', porte: 'Pequeno', idade: 2, sexo: 'Fêmea', tipo: 'Cachorro', foto: fifiImage },
+    { id: 3, nome: 'Milo', raca: 'Pug', porte: 'Médio', idade: 4, sexo: 'Macho', tipo: 'Cachorro', foto: miloImage },
+    { id: 4, nome: 'Luna', raca: 'Persa', porte: 'Pequeno', idade: 1, sexo: 'Fêmea', tipo: 'Gato', foto: lunaImage },
+    { id: 5, nome: 'Simba', raca: 'Siamês', porte: 'Médio', idade: 2, sexo: 'Macho', tipo: 'Gato', foto: simbaImage },
+    { id: 6, nome: 'Bella', raca: 'Golden Retriever', porte: 'Grande', idade: 5, sexo: 'Fêmea', tipo: 'Cachorro', foto: bellaImage },
+    { id: 7, nome: 'Tom', raca: 'Maine Coon', porte: 'Grande', idade: 3, sexo: 'Macho', tipo: 'Gato', foto: tomImage },
+    { id: 8, nome: 'Max', raca: 'Rottweiler', porte: 'Grande', idade: 6, sexo: 'Macho', tipo: 'Cachorro', foto: maxImage },
+    { id: 9, nome: 'Mia', raca: 'Sphynx', porte: 'Pequeno', idade: 1, sexo: 'Fêmea', tipo: 'Gato', foto: miaImage },
+    { id: 10, nome: 'Charlie', raca: 'Bulldog', porte: 'Médio', idade: 4, sexo: 'Macho', tipo: 'Cachorro', foto: charlieImage },
   ];
 
   if (filters) {
-    return pets.filter(pet => 
+    return pets.filter((pet) =>
       (!filters.porte || pet.porte === filters.porte) &&
       (!filters.sexo || pet.sexo === filters.sexo) &&
-      (!filters.idade || pet.idade === filters.idade) &&
+      (!filters.idade || pet.idade === parseInt(filters.idade, 10)) &&
       (!filters.tipo || pet.tipo === filters.tipo)
     );
   }
@@ -46,7 +58,7 @@ function Adocao() {
 
   const handleFilterChange = (e) => {
     const { name, value } = e.target;
-    setFilters(prevFilters => ({
+    setFilters((prevFilters) => ({
       ...prevFilters,
       [name]: value,
     }));
@@ -54,8 +66,8 @@ function Adocao() {
 
   return (
     <div>
-      {}
-       <div className="filtro-container">
+      {/* Filtros */}
+      <div className="filtro-container">
         <h3>Filtrar Pets</h3>
         <form>
           <label>
@@ -98,13 +110,17 @@ function Adocao() {
           </label>
         </form>
       </div>
-     
-      <h2>Pets Disponíveis para Adoção</h2>
 
+      {/* Lista de Pets */}
+      <h2>Pets Disponíveis para Adoção</h2>
       <div className="pets-container">
-        {pets.map(pet => (
+        {pets.map((pet) => (
           <div key={pet.id} className="pet-card">
-            <img src={pet.foto} alt={pet.nome} className="pet-image" />
+            <img
+              src={pet.foto || 'https://via.placeholder.com/150'}
+              alt={pet.nome}
+              className="pet-image"
+            />
             <div className="pet-info">
               <h3>{pet.nome}</h3>
               <p>Raça: {pet.raca}</p>
