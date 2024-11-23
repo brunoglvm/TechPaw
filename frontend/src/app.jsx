@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './styles/global.css';
 import Home from './pages/Home/Home';
@@ -7,6 +7,13 @@ import Adocao from './pages/Adocao/Adocao';
 import Pet from './pages/Pet/Pet';
 
 function App() {
+  const [pets, setPets] = useState([]); // Estado para armazenar os pets
+
+  // Função para adicionar um pet à lista
+  const handleAddPet = (newPet) => {
+    setPets((prevPets) => [...prevPets, newPet]); // Adiciona o novo pet ao estado
+  };
+
   return (
     <Router>
       <header>
@@ -23,7 +30,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/adotante" element={<Adotante />} />
         <Route path="/adocao" element={<Adocao />} />
-        <Route path="/pet" element={<Pet />} />
+        {/* Passando o estado pets e a função onAddPet para o componente Pet */}
+        <Route path="/pet" element={<Pet onAddPet={handleAddPet} pets={pets} />} />
       </Routes>
     </Router>
   );
