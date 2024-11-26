@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 function Pet({ onAddPet, pets = [] }) {  
   const [formData, setFormData] = useState({
     nome: '',
+    especie: '',
     raca: '',
     porte: '',
     idade: '',
@@ -21,6 +22,7 @@ function Pet({ onAddPet, pets = [] }) {
     onAddPet(newPet); // Passa o novo pet para o componente pai
     setFormData({
       nome: '',
+      especie: '',
       raca: '',
       porte: '',
       idade: '',
@@ -52,6 +54,18 @@ function Pet({ onAddPet, pets = [] }) {
             className="form-input"
             placeholder="Nome do Pet"
             value={formData.nome}
+            onChange={handleChange}
+          />
+        </div>
+
+        <div className="form-group">
+          <label className="form-label">Espécie</label>
+          <input
+            type="text"
+            name="especie"
+            className="form-input"
+            placeholder="Espécie"
+            value={formData.especie}
             onChange={handleChange}
           />
         </div>

@@ -14,16 +14,16 @@ import fifiImage from '../../assets/fifi.jpg';
 
 const buscarPets = async (filters) => {
   const pets = [
-    { id: 1, nome: 'Rex', raca: 'Labrador', porte: 'Médio', idade: 3, sexo: 'Macho', tipo: 'Cachorro', foto: rexImage },
-    { id: 2, nome: 'Fifi', raca: 'Poodle', porte: 'Pequeno', idade: 2, sexo: 'Fêmea', tipo: 'Cachorro', foto: fifiImage },
-    { id: 3, nome: 'Milo', raca: 'Pug', porte: 'Médio', idade: 4, sexo: 'Macho', tipo: 'Cachorro', foto: miloImage },
-    { id: 4, nome: 'Luna', raca: 'Persa', porte: 'Pequeno', idade: 1, sexo: 'Fêmea', tipo: 'Gato', foto: lunaImage },
-    { id: 5, nome: 'Simba', raca: 'Siamês', porte: 'Médio', idade: 2, sexo: 'Macho', tipo: 'Gato', foto: simbaImage },
-    { id: 6, nome: 'Bella', raca: 'Golden Retriever', porte: 'Grande', idade: 5, sexo: 'Fêmea', tipo: 'Cachorro', foto: bellaImage },
-    { id: 7, nome: 'Tom', raca: 'Maine Coon', porte: 'Grande', idade: 3, sexo: 'Macho', tipo: 'Gato', foto: tomImage },
-    { id: 8, nome: 'Max', raca: 'Rottweiler', porte: 'Grande', idade: 6, sexo: 'Macho', tipo: 'Cachorro', foto: maxImage },
-    { id: 9, nome: 'Mia', raca: 'Sphynx', porte: 'Pequeno', idade: 1, sexo: 'Fêmea', tipo: 'Gato', foto: miaImage },
-    { id: 10, nome: 'Charlie', raca: 'Bulldog', porte: 'Médio', idade: 4, sexo: 'Macho', tipo: 'Cachorro', foto: charlieImage },
+    { id: 1, nome: 'Rex', raca: 'Labrador', porte: 'Médio', idade: 3, sexo: 'Macho', especie: 'Cachorro', foto: rexImage },
+    { id: 2, nome: 'Fifi', raca: 'Poodle', porte: 'Pequeno', idade: 2, sexo: 'Fêmea', especie: 'Cachorro', foto: fifiImage },
+    { id: 3, nome: 'Milo', raca: 'Pug', porte: 'Médio', idade: 4, sexo: 'Macho', especie: 'Cachorro', foto: miloImage },
+    { id: 4, nome: 'Luna', raca: 'Persa', porte: 'Pequeno', idade: 1, sexo: 'Fêmea', especie: 'Gato', foto: lunaImage },
+    { id: 5, nome: 'Simba', raca: 'Siamês', porte: 'Médio', idade: 2, sexo: 'Macho', especie: 'Gato', foto: simbaImage },
+    { id: 6, nome: 'Bella', raca: 'Golden Retriever', porte: 'Grande', idade: 5, sexo: 'Fêmea', especie: 'Cachorro', foto: bellaImage },
+    { id: 7, nome: 'Tom', raca: 'Maine Coon', porte: 'Grande', idade: 3, sexo: 'Macho', especie: 'Gato', foto: tomImage },
+    { id: 8, nome: 'Max', raca: 'Rottweiler', porte: 'Grande', idade: 6, sexo: 'Macho', especie: 'Cachorro', foto: maxImage },
+    { id: 9, nome: 'Mia', raca: 'Sphynx', porte: 'Pequeno', idade: 1, sexo: 'Fêmea', especie: 'Gato', foto: miaImage },
+    { id: 10, nome: 'Charlie', raca: 'Bulldog', porte: 'Médio', idade: 4, sexo: 'Macho', especie: 'Cachorro', foto: charlieImage },
   ];
 
   if (filters) {
@@ -31,7 +31,7 @@ const buscarPets = async (filters) => {
       (!filters.porte || pet.porte === filters.porte) &&
       (!filters.sexo || pet.sexo === filters.sexo) &&
       (!filters.idade || pet.idade === parseInt(filters.idade, 10)) &&
-      (!filters.tipo || pet.tipo === filters.tipo)
+      (!filters.especie || pet.especie === filters.especie)
     );
   }
 
@@ -44,7 +44,7 @@ function Adocao() {
     porte: '',
     sexo: '',
     idade: '',
-    tipo: '',
+    especie: '',
   });
 
   useEffect(() => {
@@ -101,8 +101,8 @@ function Adocao() {
           </label>
 
           <label>
-            Tipo:
-            <select name="tipo" value={filters.tipo} onChange={handleFilterChange}>
+            Espécie:
+            <select name="especie" value={filters.especie} onChange={handleFilterChange}>
               <option value="">Selecione</option>
               <option value="Cachorro">Cachorro</option>
               <option value="Gato">Gato</option>
