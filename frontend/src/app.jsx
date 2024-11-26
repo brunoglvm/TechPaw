@@ -4,6 +4,7 @@ import './styles/global.css';
 import Home from './pages/Home/Home';
 import Adotante from './pages/Adotante/Adotante';
 import Adocao from './pages/Adocao/Adocao';
+import Historico from './pages/Historico/Historico'
 import Pet from './pages/Pet/Pet';
 
 function App() {
@@ -16,12 +17,13 @@ function App() {
 
   return (
     <Router>
-      <header>
-        <nav>
+      <header class= "header">
+        <nav class= "menu">
           <ul>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/adocao">Quero Adotar</Link></li>
             <li><Link to="/pet">Cadastrar Pet </Link></li>
+            <li><Link to="/historico">Histórico de Adoções </Link></li>
             <li><Link to="/adotante">Cadastre-se</Link></li>
           </ul>
         </nav>
@@ -32,6 +34,7 @@ function App() {
         <Route path="/adocao" element={<Adocao />} />
         {/* Passando o estado pets e a função onAddPet para o componente Pet */}
         <Route path="/pet" element={<Pet onAddPet={handleAddPet} pets={pets} />} />
+        <Route path="/historico" element= {<Historico />} />
       </Routes>
     </Router>
   );
