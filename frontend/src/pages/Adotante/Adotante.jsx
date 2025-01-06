@@ -6,15 +6,18 @@ import cachorro from "../../assets/cachorro.png";
 function Adotante() {
   return (
     <div className="adotante-page">
-
       <main className="adotante-main">
         <h1>Preencha o formulário abaixo para se cadastrar como adotante</h1>
         <div className="form">
-            <img src={cachorro} alt="Imagem cachorro e dono" className="form-image"/>
-        { }
-        <Formulario />
+          <img
+            src={cachorro}
+            alt="Imagem cachorro e dono"
+            className="form-image"
+          />
+          {}
+          <Formulario />
         </div>
-        { }
+        {}
         {/* <Card /> */}
       </main>
     </div>

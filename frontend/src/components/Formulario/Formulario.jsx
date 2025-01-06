@@ -25,7 +25,7 @@ export function Formulario() {
       setTelefoneError("O telefone deve conter apenas números.");
       return;
     }
-    setTelefoneError(""); 
+    setTelefoneError("");
 
     console.log({ nome, email, telefone, endereco });
   };
@@ -38,7 +38,7 @@ export function Formulario() {
 
   const handleTelefoneChange = (e) => {
     // Permitir apenas números no campo de telefone
-    const value = e.target.value.replace(/\D/g, ""); 
+    const value = e.target.value.replace(/\D/g, "");
     setTelefone(value);
   };
 
@@ -50,7 +50,7 @@ export function Formulario() {
           type="text"
           id="nome"
           value={nome}
-          onChange={handleNomeChange} 
+          onChange={handleNomeChange}
           required
         />
         {nomeError && <span style={{ color: "red" }}>{nomeError}</span>}
@@ -73,7 +73,7 @@ export function Formulario() {
           type="text"
           id="telefone"
           value={telefone}
-          onChange={handleTelefoneChange} 
+          onChange={handleTelefoneChange}
           required
         />
         {telefoneError && <span style={{ color: "red" }}>{telefoneError}</span>}

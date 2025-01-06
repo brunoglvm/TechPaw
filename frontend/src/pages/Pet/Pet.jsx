@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-function Pet({ onAddPet, pets = [] }) {  
+function Pet({ onAddPet, pets = [] }) {
   const [formData, setFormData] = useState({
-    nome: '',
-    especie: '',
-    raca: '',
-    porte: '',
-    idade: '',
+    nome: "",
+    especie: "",
+    raca: "",
+    porte: "",
+    idade: "",
     foto: null,
-    sexo: '', 
+    sexo: "",
   });
 
   const handleSubmit = (e) => {
@@ -21,25 +21,25 @@ function Pet({ onAddPet, pets = [] }) {
     };
     onAddPet(newPet); // Passa o novo pet para o componente pai
     setFormData({
-      nome: '',
-      especie: '',
-      raca: '',
-      porte: '',
-      idade: '',
+      nome: "",
+      especie: "",
+      raca: "",
+      porte: "",
+      idade: "",
       foto: null,
-      sexo: '', 
+      sexo: "",
     });
   };
 
   const handleChange = (e) => {
-    const value = e.target.type === 'file' ? e.target.files[0] : e.target.value;
+    const value = e.target.type === "file" ? e.target.files[0] : e.target.value;
     setFormData({
       ...formData,
       [e.target.name]: value,
     });
   };
 
-  const petsDisponiveis = pets.filter(pet => pet.disponivel === true); // Filtra os pets disponíveis
+  const petsDisponiveis = pets.filter((pet) => pet.disponivel === true); // Filtra os pets disponíveis
 
   return (
     <div>
@@ -145,7 +145,9 @@ function Pet({ onAddPet, pets = [] }) {
           </div>
         )}
 
-        <button type="submit" className="submit-btn">Cadastrar Pet</button>
+        <button type="submit" className="submit-btn">
+          Cadastrar Pet
+        </button>
       </form>
 
       {/* Animais Disponíveis */}

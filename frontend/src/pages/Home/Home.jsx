@@ -13,11 +13,56 @@ import charlieFoto from "../../assets/charlie.jpg";
 // Função para obter os pets disponíveis
 const buscarPets = async () => {
   return [
-    { id: 1, nome: "Tom", raca: "Vira-lata", porte: "Pequeno", idade: 2, sexo: "Macho", tipo: "Cachorro", foto: tomFoto },
-    { id: 2, nome: "Milo", raca: "Bulldog", porte: "Médio", idade: 3, sexo: "Macho", tipo: "Cachorro", foto: miloFoto },
-    { id: 3, nome: "Mia", raca: "Persa", porte: "Pequeno", idade: 1, sexo: "Fêmea", tipo: "Gato", foto: miaFoto },
-    { id: 4, nome: "Max", raca: "Golden Retriever", porte: "Grande", idade: 4, sexo: "Macho", tipo: "Cachorro", foto: maxFoto },
-    { id: 5, nome: "Charlie", raca: "Siamês", porte: "Pequeno", idade: 2, sexo: "Macho", tipo: "Gato", foto: charlieFoto },
+    {
+      id: 1,
+      nome: "Tom",
+      raca: "Vira-lata",
+      porte: "Pequeno",
+      idade: 2,
+      sexo: "Macho",
+      tipo: "Cachorro",
+      foto: tomFoto,
+    },
+    {
+      id: 2,
+      nome: "Milo",
+      raca: "Bulldog",
+      porte: "Médio",
+      idade: 3,
+      sexo: "Macho",
+      tipo: "Cachorro",
+      foto: miloFoto,
+    },
+    {
+      id: 3,
+      nome: "Mia",
+      raca: "Persa",
+      porte: "Pequeno",
+      idade: 1,
+      sexo: "Fêmea",
+      tipo: "Gato",
+      foto: miaFoto,
+    },
+    {
+      id: 4,
+      nome: "Max",
+      raca: "Golden Retriever",
+      porte: "Grande",
+      idade: 4,
+      sexo: "Macho",
+      tipo: "Cachorro",
+      foto: maxFoto,
+    },
+    {
+      id: 5,
+      nome: "Charlie",
+      raca: "Siamês",
+      porte: "Pequeno",
+      idade: 2,
+      sexo: "Macho",
+      tipo: "Gato",
+      foto: charlieFoto,
+    },
   ];
 };
 
@@ -38,13 +83,17 @@ function Home() {
       {/* Banner */}
       <section className="banner">
         <h1 className="banner-title">TechPaw</h1>
-        <p className="banner-subtitle">Encontre seu melhor amigo de quatro patas aqui!</p>
+        <p className="banner-subtitle">
+          Encontre seu melhor amigo de quatro patas aqui!
+        </p>
         <img src={gatoBanner} alt="Imagem de um gato com seu dono" />
       </section>
 
       {/* Mensagem Inspiradora */}
       <section className="inspiracao">
-        <h2 className="section-title">Dê um lar cheio de amor a um amigo peludo!</h2>
+        <h2 className="section-title">
+          Dê um lar cheio de amor a um amigo peludo!
+        </h2>
       </section>
 
       {/* Por Que Adotar? */}
@@ -62,8 +111,12 @@ function Home() {
           <div className="card">
             <h3>Adotar é um Ato de Amor</h3>
             <ul>
-              <li>Proporciona uma nova oportunidade para quem precisa de carinho.</li>             
-              <li>É uma forma de contribuir para um mundo melhor para todos.</li>
+              <li>
+                Proporciona uma nova oportunidade para quem precisa de carinho.
+              </li>
+              <li>
+                É uma forma de contribuir para um mundo melhor para todos.
+              </li>
             </ul>
           </div>
           <div className="card">
@@ -73,7 +126,7 @@ function Home() {
               <li>Cria um vínculo único entre humano e pet.</li>
               <li>Impacta positivamente na sociedade.</li>
             </ul>
-          </div>        
+          </div>
         </div>
       </section>
 
@@ -104,23 +157,36 @@ function Home() {
             <img src={cachorroFeliz} alt="Cachorro Feliz" />
             <h3>Cuidados com Animais Adotados</h3>
             <p>
-              Animais adotados precisam de atenção especial. Alimentação adequada é essencial para mantê-los saudáveis
-              e cheios de energia. Exercícios regulares, como passeios e brincadeiras, ajudam a reduzir o estresse e
-              melhorar o comportamento. Além disso, consultas veterinárias periódicas garantem que a saúde do seu amigo
-              peludo esteja sempre em dia.
+              Animais adotados precisam de atenção especial. Alimentação
+              adequada é essencial para mantê-los saudáveis e cheios de energia.
+              Exercícios regulares, como passeios e brincadeiras, ajudam a
+              reduzir o estresse e melhorar o comportamento. Além disso,
+              consultas veterinárias periódicas garantem que a saúde do seu
+              amigo peludo esteja sempre em dia.
             </p>
           </div>
           <div className="educacao-card">
             <img src={cachorro1} alt="Cachorro e dono" />
             <h3>Responsabilidade e Compromisso</h3>
-            <p> Adotar um animal é um ato de amor, mas também uma grande responsabilidade. Você estará assumindo o compromisso de cuidar dele
-              por toda a sua vida. Isso significa garantir alimentação, higiene, saúde e muito carinho. Esteja preparado para dedicar tempo e recursos para proporcionar bem-estar ao seu pet.</p>
+            <p>
+              {" "}
+              Adotar um animal é um ato de amor, mas também uma grande
+              responsabilidade. Você estará assumindo o compromisso de cuidar
+              dele por toda a sua vida. Isso significa garantir alimentação,
+              higiene, saúde e muito carinho. Esteja preparado para dedicar
+              tempo e recursos para proporcionar bem-estar ao seu pet.
+            </p>
           </div>
           <div className="educacao-card">
             <img src={cachorro2} alt="Cachorro e dona" />
             <h3>Importância da Castração e Vacinação</h3>
-            <p>A castração é uma medida essencial para controlar a população animal, evitando ninhadas indesejadas que podem acabar em abandono. Além disso,
-              castrar os animais reduz o risco de doenças graves, como tumores e infecções, melhorando sua qualidade de vida.</p>
+            <p>
+              A castração é uma medida essencial para controlar a população
+              animal, evitando ninhadas indesejadas que podem acabar em
+              abandono. Além disso, castrar os animais reduz o risco de doenças
+              graves, como tumores e infecções, melhorando sua qualidade de
+              vida.
+            </p>
           </div>
         </div>
       </section>
@@ -128,7 +194,9 @@ function Home() {
       {/* Footer */}
       <footer className="footer">
         <h2>Sobre a TechPaw</h2>
-        <p>Nossa missão é conectar animais abandonados a lares cheios de amor.</p>
+        <p>
+          Nossa missão é conectar animais abandonados a lares cheios de amor.
+        </p>
         <form className="form-contato">
           <h3>Entre em Contato</h3>
           <input type="text" placeholder="Seu Nome" required />
