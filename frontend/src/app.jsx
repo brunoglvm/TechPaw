@@ -27,10 +27,10 @@ function App() {
               <Link to="/adocao">Quero Adotar</Link>
             </li>
             <li>
-              <Link to="/pet">Cadastrar Pet </Link>
+              <Link to="/pet">Cadastrar Pet</Link>
             </li>
             <li>
-              <Link to="/historico">Histórico de Adoções </Link>
+              <Link to="/historico">Histórico de Adoções</Link>
             </li>
             <li>
               <Link to="/adotante">Cadastre-se</Link>
