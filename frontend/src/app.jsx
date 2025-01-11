@@ -9,7 +9,7 @@ import Home from "./pages/Home/home";
 import Adotante from "./pages/Adotante/adotante";
 import Adocao from "./pages/Adocao/adocao";
 import Historico from "./pages/Historico/historico";
-import Pet from "./pages/Pet/Pet";
+import Pet from "./pages/Pet/pet";
 
 function App() {
   const [pets, setPets] = useState([]); // Estado para armazenar os pets
