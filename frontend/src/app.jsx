@@ -1,10 +1,14 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import "./styles/vars.css";
 import "./styles/global.css";
-import Home from "./pages/Home/Home";
-import Adotante from "./pages/Adotante/Adotante";
-import Adocao from "./pages/Adocao/Adocao";
-import Historico from "./pages/Historico/Historico";
+import "./styles/media-queries.css";
+
+import Home from "./pages/Home/home";
+import Adotante from "./pages/Adotante/adotante";
+import Adocao from "./pages/Adocao/adocao";
+import Historico from "./pages/Historico/historico";
 import Pet from "./pages/Pet/Pet";
 
 function App() {
@@ -17,30 +21,8 @@ function App() {
 
   return (
     <Router>
-      <header class="header">
-        <nav class="menu">
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/adocao">Quero Adotar</Link>
-            </li>
-            <li>
-              <Link to="/pet">Cadastrar Pet</Link>
-            </li>
-            <li>
-              <Link to="/historico">Histórico de Adoções</Link>
-            </li>
-            <li>
-              <Link to="/adotante">Cadastre-se</Link>
-            </li>
-          </ul>
-        </nav>
-      </header>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/adotante" element={<Adotante />} />
         <Route path="/adocao" element={<Adocao />} />
         {/* Passando o estado pets e a função onAddPet para o componente Pet */}
         <Route
@@ -48,6 +30,7 @@ function App() {
           element={<Pet onAddPet={handleAddPet} pets={pets} />}
         />
         <Route path="/historico" element={<Historico />} />
+        <Route path="/adotante" element={<Adotante />} />
       </Routes>
     </Router>
   );

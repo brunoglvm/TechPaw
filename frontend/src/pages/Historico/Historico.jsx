@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-import auroraImage from "../../assets/aurora.jpg";
-import bruceImage from "../../assets/bruce.jpg";
-import floquinhoImage from "../../assets/floquinho.jpg";
-import lukeImage from "../../assets/luke.jpg";
-import marleyImage from "../../assets/marley.jpg";
-import selinaImage from "../../assets/selina.jpg";
+import auroraImage from "@/assets/aurora.jpg";
+import bruceImage from "@/assets/bruce.jpg";
+import floquinhoImage from "@/assets/floquinho.jpg";
+import lukeImage from "@/assets/luke.jpg";
+import marleyImage from "@/assets/marley.jpg";
+import selinaImage from "@/assets/selina.jpg";
+
+import { Header } from "@/components/Header/header";
 
 function Historico() {
   const adotados = [
-    // { id: 1, nome: 'Rex', raca: 'Labrador', porte: 'Médio', idade: 3, sexo: 'Macho', tipo: 'Cachorro', foto: rexImage },
     {
       id: 1,
       nome: "Aurora",
@@ -83,6 +84,7 @@ function Historico() {
 
   return (
     <div style={{ marginTop: "6rem" }}>
+      <Header />
       <h3>
         Aqui no TechPaw, trabalhamos todos os dias para encontrar lares amorosos
         para os animais que resgatamos. <br />
@@ -92,11 +94,7 @@ function Historico() {
       <div style={gridStyle} className="pets-container">
         {adotados.map((adotado) => (
           <div key={adotado.id} className="pet-card">
-            <img
-              src={adotado.foto || "https://via.placeholder.com/150"}
-              alt={adotado.nome}
-              className="pet-image"
-            />
+            <img src={adotado.foto} alt={adotado.nome} className="pet-image" />
             <div className="pet-info">
               <h3>{adotado.nome}</h3>
               <p>Especie: {adotado.especie}</p>

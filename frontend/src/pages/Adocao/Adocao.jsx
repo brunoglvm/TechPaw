@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from "react";
 
-// Importação de imagens
-import maxImage from "../../assets/max.jpg";
-import miaImage from "../../assets/mia.jpg";
-import miloImage from "../../assets/milo.jpg";
-import charlieImage from "../../assets/charlie.jpg";
-import tomImage from "../../assets/tom.jpg";
-import lunaImage from "../../assets/luna.jpg";
-import simbaImage from "../../assets/simba.jpg";
-import rexImage from "../../assets/rex.jpg";
-import bellaImage from "../../assets/bella.jpg";
-import fifiImage from "../../assets/fifi.jpg";
+import maxImage from "@/assets/max.jpg";
+import miaImage from "@/assets/mia.jpg";
+import miloImage from "@/assets/milo.jpg";
+import charlieImage from "@/assets/charlie.jpg";
+import tomImage from "@/assets/tom.jpg";
+import lunaImage from "@/assets/luna.jpg";
+import simbaImage from "@/assets/simba.jpg";
+import rexImage from "@/assets/rex.jpg";
+import bellaImage from "@/assets/bella.jpg";
+import fifiImage from "@/assets/fifi.jpg";
+
+import { Header } from "@/components/Header/header";
 
 const buscarPets = async (filters) => {
   const pets = [
@@ -157,6 +158,7 @@ function Adocao() {
 
   return (
     <div>
+      <Header />
       {/* Filtros */}
       <div className="filtro-container">
         <h3>Filtrar Pets</h3>

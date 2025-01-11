@@ -1,11 +1,14 @@
 import React from "react";
-import { Formulario } from "../../components/Formulario/Formulario";
-import { Card } from "../../components/Card/Card";
-import cachorro from "../../assets/cachorro.png";
+
+import cachorro from "@/assets/cachorro.png";
+
+import { Formulario } from "@/components/Formulario/formulario";
+import { Header } from "@/components/Header/header";
 
 function Adotante() {
   return (
     <div className="adotante-page">
+      <Header />
       <main className="adotante-main">
         <h1>Preencha o formulário abaixo para se cadastrar como adotante</h1>
         <div className="form">
@@ -18,7 +21,6 @@ function Adotante() {
           <Formulario />
         </div>
         {}
-        {/* <Card /> */}
       </main>
     </div>
   );

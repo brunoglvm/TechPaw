@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
-import gatoBanner from "../../assets/gato2.png";
-import cachorroFeliz from "../../assets/cachorro-feliz.png";
-import cachorro2 from "../../assets/cachorro2.png";
-import cachorro1 from "../../assets/cachorro1.png";
 
-import tomFoto from "../../assets/tom.jpg";
-import miloFoto from "../../assets/milo.jpg";
-import miaFoto from "../../assets/mia.jpg";
-import maxFoto from "../../assets/max.jpg";
-import charlieFoto from "../../assets/charlie.jpg";
+import gatoBanner from "@/assets/gato2.png";
+import cachorroFeliz from "@/assets/cachorro-feliz.png";
+import cachorro2 from "@/assets/cachorro2.png";
+import cachorro1 from "@/assets/cachorro1.png";
+import tomFoto from "@/assets/tom.jpg";
+import miloFoto from "@/assets/milo.jpg";
+import miaFoto from "@/assets/mia.jpg";
+import maxFoto from "@/assets/max.jpg";
+import charlieFoto from "@/assets/charlie.jpg";
+
+import { Header } from "@/components/Header/header";
 
 // Função para obter os pets disponíveis
 const buscarPets = async () => {
@@ -80,6 +82,7 @@ function Home() {
 
   return (
     <div>
+      <Header />
       {/* Banner */}
       <section className="banner">
         <h1 className="banner-title">TechPaw</h1>

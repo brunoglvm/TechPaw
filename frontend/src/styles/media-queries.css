@@ -1,0 +1,121 @@
+@media screen and (max-width: 768px) {
+  /* Header e Navegação */
+  header {
+    height: auto;
+    padding: 1rem;
+    position: relative;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav li {
+    margin: 0.5rem 0;
+  }
+
+  /* Banner */
+  .banner {
+    height: 250px;
+    padding: 1rem;
+  }
+
+  .banner-title {
+    font-size: 2.5rem;
+  }
+
+  .banner-subtitle {
+    font-size: 1rem;
+  }
+
+  /* Formulários */
+
+  .form {
+    flex-direction: column-reverse;
+  }
+  .pet-form,
+  .adotante-form,
+  .form {
+    width: 95%;
+    margin: 1rem auto;
+    padding: 1rem;
+  }
+
+  /* Seções */
+  .por-que-adotar,
+  .informacoes-educativas,
+  .pets-container {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+
+  .educacao-grid {
+    margin-left: 2rem;
+    grid-template-columns: 1fr;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 1rem;
+  }
+
+  .footer h2 {
+    font-size: 1.5rem;
+  }
+
+  .footer p {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Títulos e textos */
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .banner-title {
+    font-size: 2rem;
+  }
+
+  .banner-subtitle {
+    font-size: 0.9rem;
+  }
+
+  /* Cards */
+  .card h3,
+  .educacao-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .card ul li,
+  .educacao-card p {
+    font-size: 1rem;
+  }
+
+  /* Cards e Grids */
+  .cards,
+  .animais-grid,
+  .educacao-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card,
+  .animal-card,
+  .educacao-card {
+    width: 90%;
+    margin-bottom: 1rem;
+  }
+
+  .pets-container {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 2rem 1rem;
+  }
+
+  .pet-card {
+    width: 100%;
+  }
+}

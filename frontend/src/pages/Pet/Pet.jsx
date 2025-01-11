@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Header } from "@/components/Header/header";
 
 function Pet({ onAddPet, pets = [] }) {
   const [formData, setFormData] = useState({
@@ -43,6 +44,7 @@ function Pet({ onAddPet, pets = [] }) {
 
   return (
     <div>
+      <Header />
       <form className="pet-form" onSubmit={handleSubmit}>
         <h2 className="pet-form-title">Cadastro de Pet</h2>
 
