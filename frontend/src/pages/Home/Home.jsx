@@ -1,3 +1,4 @@
+//
 import React, { useState, useEffect } from "react";
 
 import gatoBanner from "@/assets/gato2.png";

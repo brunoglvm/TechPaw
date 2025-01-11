@@ -1,3 +1,4 @@
+//
 import React from "react";
 
 import cachorro from "@/assets/cachorro.png";
