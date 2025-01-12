@@ -1,4 +1,3 @@
-//
 import React from "react";
 
 import auroraImage from "@/assets/aurora.jpg";

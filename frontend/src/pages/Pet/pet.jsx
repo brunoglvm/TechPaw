@@ -1,4 +1,3 @@
-//
 import React, { useState } from "react";
 import { Header } from "@/components/Header/header";
 
@@ -6,11 +5,9 @@ function Pet({ onAddPet, pets = [] }) {
   const [formData, setFormData] = useState({
     nome: "",
     especie: "",
-    raca: "",
-    porte: "",
     idade: "",
+    descricao: "",
     foto: null,
-    sexo: "",
   });
 
   const handleSubmit = (e) => {
@@ -25,11 +22,9 @@ function Pet({ onAddPet, pets = [] }) {
     setFormData({
       nome: "",
       especie: "",
-      raca: "",
-      porte: "",
       idade: "",
+      descricao: "",
       foto: null,
-      sexo: "",
     });
   };
 
@@ -74,33 +69,6 @@ function Pet({ onAddPet, pets = [] }) {
         </div>
 
         <div className="form-group">
-          <label className="form-label">Raça</label>
-          <input
-            type="text"
-            name="raca"
-            className="form-input"
-            placeholder="Raça"
-            value={formData.raca}
-            onChange={handleChange}
-          />
-        </div>
-
-        <div className="form-group">
-          <label className="form-label">Porte</label>
-          <select
-            name="porte"
-            className="form-select"
-            value={formData.porte}
-            onChange={handleChange}
-          >
-            <option value="">Selecione o porte</option>
-            <option value="pequeno">Pequeno</option>
-            <option value="medio">Médio</option>
-            <option value="grande">Grande</option>
-          </select>
-        </div>
-
-        <div className="form-group">
           <label className="form-label">Idade</label>
           <input
             type="number"
@@ -113,17 +81,18 @@ function Pet({ onAddPet, pets = [] }) {
         </div>
 
         <div className="form-group">
-          <label className="form-label">Sexo</label>
-          <select
-            name="sexo"
-            className="form-select"
-            value={formData.sexo}
+          <label className="form-label" htmlFor="raca">
+            Descrição
+          </label>
+          <textarea
+            name="raca"
+            id="raca"
+            className="form-input"
+            placeholder="Raça"
+            value={formData.raca}
             onChange={handleChange}
-          >
-            <option value="">Selecione o sexo</option>
-            <option value="macho">Macho</option>
-            <option value="femea">Fêmea</option>
-          </select>
+            rows="4"
+          ></textarea>
         </div>
 
         <div className="form-group">

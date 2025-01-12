@@ -1,5 +1,5 @@
-//
 import React, { useState } from "react";
+import "./formulario.css";
 
 export function Formulario() {
   const [nome, setNome] = useState("");
@@ -50,6 +50,7 @@ export function Formulario() {
         <input
           type="text"
           id="nome"
+          placeholder="Insira seu nome completo"
           value={nome}
           onChange={handleNomeChange}
           required
@@ -62,6 +63,7 @@ export function Formulario() {
         <input
           type="email"
           id="email"
+          placeholder="Insira seu email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
@@ -73,6 +75,7 @@ export function Formulario() {
         <input
           type="text"
           id="telefone"
+          placeholder="Insira seu telefone"
           value={telefone}
           onChange={handleTelefoneChange}
           required
@@ -85,6 +88,7 @@ export function Formulario() {
         <input
           type="text"
           id="endereco"
+          placeholder="Insira seu endereço"
           value={endereco}
           onChange={(e) => setEndereco(e.target.value)}
           required

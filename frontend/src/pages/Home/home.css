@@ -1,0 +1,201 @@
+/* Banner Home */
+.banner {
+  height: 500px;
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-light);
+  text-align: center;
+}
+
+.banner-title {
+  font-size: 4rem;
+  font-weight: var(--font-weight-bd);
+  margin-bottom: 1rem;
+}
+
+.banner-subtitle {
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-md);
+}
+
+.inspiracao {
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: var(--font-weight-bd);
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+/* Por Que Adotar */
+.por-que-adotar {
+  padding: 2rem;
+  background-color: var(--text-light);
+  border-radius: 8px;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1.5rem;
+}
+
+.card {
+  background-color: var(--text-light);
+  border: 2px solid #3ce2e2;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px var(--shadow-color);
+  text-align: center;
+  padding: 2rem;
+  max-width: 600px;
+}
+
+.card h3 {
+  font-size: 1.7rem;
+  font-weight: var(--font-weight-sb);
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.card ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.card ul li {
+  font-size: 1.3rem;
+  font-weight: var(--font-weight-reg);
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+/* Animais Disponíveis */
+.animais-disponiveis {
+  padding: 20px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: var(--font-weight-bd);
+  margin-bottom: 20px;
+}
+
+.animais-grid {
+  display: flex;
+  flex-wrap: wrap; /* Permite quebrar a linha se não houver espaço suficiente */
+  gap: 20px; /* Espaçamento entre os cards */
+  justify-content: center; /* Centraliza os cards */
+}
+
+.animal-card {
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: calc(20% - 20px); /* Garantindo que 5 cards caibam na linha */
+  text-align: center;
+  padding: 10px;
+}
+
+.animal-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.animal-card h3 {
+  font-size: 1.2rem;
+  font-weight: var(--font-weight-md);
+  margin: 10px 0;
+}
+
+.animal-card p {
+  font-size: 1rem;
+  font-weight: var(--font-weight-reg);
+  color: var(--text-muted);
+}
+
+.link-detalhes {
+  text-decoration: none;
+  color: #3ce2e2;
+  font-weight: bold;
+  margin-top: 10px;
+  display: inline-block;
+  padding: 8px 16px;
+  border: 2px solid #3ce2e2;
+  border-radius: 4px;
+}
+
+.link-detalhes:hover {
+  background-color: #3ce2e2;
+  color: var(--text-light);
+}
+
+/* Informações Educativas */
+.informacoes-educativas {
+  padding: 2rem;
+  background-color: var(--primary-color);
+  border-radius: 8px 8px 0 0;
+}
+
+.informacoes-educativas .section-title {
+  color: var(--text-light);
+}
+
+.educacao-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.educacao-card {
+  background-color: var(--text-light);
+  padding: 1rem;
+  text-align: center;
+  border: 2px solid #3ce2e2;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.educacao-card h3 {
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-sb);
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.educacao-card p {
+  font-size: 1rem;
+  font-weight: var(--font-weight-reg);
+  color: var(--text-muted);
+}
+
+.educacao-card img {
+  width: 60%;
+  height: 20rem;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.contato {
+  background-color: var(--secondary-color);
+  color: var(--text-light);
+  text-align: center;
+  padding: 2rem;
+}
+
+.contato h2 {
+  font-size: 2rem;
+  font-weight: var(--font-weight-md);
+  color: var(--text-light);
+}

@@ -1,5 +1,5 @@
-//
 import React, { useState, useEffect } from "react";
+import "./home.css";
 
 import gatoBanner from "@/assets/gato2.png";
 import cachorroFeliz from "@/assets/cachorro-feliz.png";
@@ -12,6 +12,7 @@ import maxFoto from "@/assets/max.jpg";
 import charlieFoto from "@/assets/charlie.jpg";
 
 import { Header } from "@/components/Header/header";
+import { Button } from "@/components/Button/button";
 
 // Função para obter os pets disponíveis
 const buscarPets = async () => {
@@ -195,19 +196,41 @@ function Home() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="footer">
-        <h2>Sobre a TechPaw</h2>
-        <p>
-          Nossa missão é conectar animais abandonados a lares cheios de amor.
-        </p>
+      <section className="contato">
         <form className="form-contato">
-          <h3>Entre em Contato</h3>
-          <input type="text" placeholder="Seu Nome" required />
-          <input type="email" placeholder="Seu E-mail" required />
-          <textarea placeholder="Sua Mensagem" required />
-          <button type="submit">Enviar</button>
+          <h2>Entre em Contato</h2>
+
+          <label htmlFor="name">Nome:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Seu Nome"
+            required
+          />
+
+          <label htmlFor="email">E-mail:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Seu E-mail"
+            required
+          />
+
+          <label htmlFor="message">Mensagem:</label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Sua Mensagem"
+            required
+          />
+
+          <Button className=".button" />
         </form>
+      </section>
+      <footer>
+        <p>TechPaw 💙 Conectando animais abandonados a lares cheios de amor</p>
       </footer>
     </div>
   );

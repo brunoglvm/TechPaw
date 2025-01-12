@@ -8,7 +8,7 @@
   z-index: 1000;
 }
 
-nav ul {
+.header nav ul {
   display: flex;
   justify-content: center;
   list-style: none;
@@ -16,20 +16,19 @@ nav ul {
   padding: 0;
 }
 
-nav li {
+.header nav ul li {
   margin: 0 1.5rem;
 }
 
-nav a {
+.header nav a {
   color: var(--text-light);
   font-size: 1.2rem;
-  font-weight: bold;
+  font-weight: var(--font-weight-sb);
   text-decoration: none;
-  transition: color 0.3s ease, border-bottom 0.3s ease;
+  transition: color 0.3s ease-in-out;
   padding-bottom: 0.2rem;
 }
 
-nav a:hover {
+.header nav a:hover {
   color: var(--secondary-color);
-  border-bottom: 2px solid var(--secondary-color);
 }
