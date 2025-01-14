@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./adocao.css";
 
 import maxImage from "@/assets/max.jpg";
 import miaImage from "@/assets/mia.jpg";

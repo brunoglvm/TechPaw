@@ -13,6 +13,7 @@ import charlieFoto from "@/assets/charlie.jpg";
 
 import { Header } from "@/components/Header/header";
 import { Button } from "@/components/Button/button";
+import { Footer } from "@/components/Footer/footer";
 
 // Função para obter os pets disponíveis
 const buscarPets = async () => {
@@ -94,13 +95,6 @@ function Home() {
         <img src={gatoBanner} alt="Imagem de um gato com seu dono" />
       </section>
 
-      {/* Mensagem Inspiradora */}
-      <section className="inspiracao">
-        <h2 className="section-title">
-          Dê um lar cheio de amor a um amigo peludo!
-        </h2>
-      </section>
-
       {/* Por Que Adotar? */}
       <section className="por-que-adotar">
         <h2 className="section-title">Por Que Adotar?</h2>
@@ -137,7 +131,7 @@ function Home() {
 
       {/* Animais Disponíveis */}
       <section className="animais-disponiveis">
-        <h2 className="section-title">Animais Disponíveis para Adoção</h2>
+        <h2>Animais Disponíveis para Adoção</h2>
         <div className="animais-grid">
           {pets.map((pet) => (
             <div key={pet.id} className="animal-card">
@@ -156,7 +150,7 @@ function Home() {
 
       {/* Informações Educativas */}
       <section className="informacoes-educativas">
-        <h2 className="section-title">Informações Educativas</h2>
+        <h2>Informações Educativas</h2>
         <div className="educacao-grid">
           <div className="educacao-card">
             <img src={cachorroFeliz} alt="Cachorro Feliz" />
@@ -200,7 +194,6 @@ function Home() {
         <form className="form-contato">
           <h2>Entre em Contato</h2>
 
-          <label htmlFor="name">Nome:</label>
           <input
             type="text"
             id="name"
@@ -209,7 +202,6 @@ function Home() {
             required
           />
 
-          <label htmlFor="email">E-mail:</label>
           <input
             type="email"
             id="email"
@@ -218,7 +210,6 @@ function Home() {
             required
           />
 
-          <label htmlFor="message">Mensagem:</label>
           <textarea
             id="message"
             name="message"
@@ -229,9 +220,7 @@ function Home() {
           <Button className=".button" />
         </form>
       </section>
-      <footer>
-        <p>TechPaw 💙 Conectando animais abandonados a lares cheios de amor</p>
-      </footer>
+      <Footer />
     </div>
   );
 }

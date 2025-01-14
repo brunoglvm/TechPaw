@@ -21,11 +21,6 @@
   font-weight: var(--font-weight-md);
 }
 
-.inspiracao {
-  text-align: center;
-  margin: 3rem 0;
-}
-
 .section-title {
   font-size: 2.5rem;
   font-weight: var(--font-weight-bd);
@@ -48,7 +43,7 @@
 
 .card {
   background-color: var(--text-light);
-  border: 2px solid #3ce2e2;
+  border: 2px solid var(--highlight-color);
   border-radius: 8px;
   box-shadow: 0 4px 6px var(--shadow-color);
   text-align: center;
@@ -79,13 +74,14 @@
 /* Animais Disponíveis */
 .animais-disponiveis {
   padding: 20px;
-  text-align: center;
 }
 
-.section-title {
+.animais-disponiveis h2 {
   font-size: 2rem;
   font-weight: var(--font-weight-bd);
-  margin-bottom: 20px;
+  color: var(--text-dark);
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
 .animais-grid {
@@ -98,17 +94,17 @@
 .animal-card {
   background-color: #f8f8f8;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px var(--shadow-color);
   overflow: hidden;
   width: calc(20% - 20px); /* Garantindo que 5 cards caibam na linha */
   text-align: center;
-  padding: 10px;
+  transition: transform 0.3s ease;
+  padding-bottom: 18px;
 }
 
 .animal-card img {
   width: 100%;
   height: auto;
-  border-radius: 8px;
 }
 
 .animal-card h3 {
@@ -123,19 +119,24 @@
   color: var(--text-muted);
 }
 
+.animal-card:hover {
+  transform: translateY(-5px);
+}
+
 .link-detalhes {
   text-decoration: none;
-  color: #3ce2e2;
+  color: var(--highlight-color);
   font-weight: bold;
   margin-top: 10px;
   display: inline-block;
   padding: 8px 16px;
-  border: 2px solid #3ce2e2;
-  border-radius: 4px;
+  border: 2px solid var(--highlight-color);
+  border-radius: 8px;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 .link-detalhes:hover {
-  background-color: #3ce2e2;
+  background-color: var(--highlight-color);
   color: var(--text-light);
 }
 
@@ -146,8 +147,11 @@
   border-radius: 8px 8px 0 0;
 }
 
-.informacoes-educativas .section-title {
+.informacoes-educativas h2 {
+  font-size: 2rem;
+  text-align: center;
   color: var(--text-light);
+  margin-bottom: 1rem;
 }
 
 .educacao-grid {
@@ -161,7 +165,7 @@
   background-color: var(--text-light);
   padding: 1rem;
   text-align: center;
-  border: 2px solid #3ce2e2;
+  border: 2px solid var(--highlight-color);
   border-radius: 8px;
   box-shadow: 0 4px 8px var(--shadow-color);
 }
@@ -187,10 +191,12 @@
   margin-top: 1rem;
 }
 
+/* Contato */
 .contato {
   background-color: var(--secondary-color);
   color: var(--text-light);
   text-align: center;
+  border-radius: 0 0 8px 8px;
   padding: 2rem;
 }
 
@@ -198,4 +204,51 @@
   font-size: 2rem;
   font-weight: var(--font-weight-md);
   color: var(--text-light);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.form-contato {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form-contato input {
+  width: 100%;
+  height: 44px;
+  padding: 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  font-family: Arial, Helvetica, sans-serif;
+  resize: none;
+}
+
+.form-contato textarea {
+  width: 100%;
+  height: 88px;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  font-family: Arial, Helvetica, sans-serif;
+  resize: none;
+}
+
+.form-contato button {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-contato button:hover {
+  background-color: #45a049;
 }

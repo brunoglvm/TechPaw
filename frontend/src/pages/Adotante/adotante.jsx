@@ -1,4 +1,5 @@
 import React from "react";
+import "./adotante.css";
 
 import cachorro from "@/assets/cachorro.png";
 
