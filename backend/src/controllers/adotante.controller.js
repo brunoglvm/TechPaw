@@ -19,7 +19,7 @@ class AdotanteController {
         });
       }
 
-      const adotanteDuplicado = await prismaClient.adotantes.findUnique({
+      const adotanteDuplicado = await prismaClient.Adotante.findUnique({
         where: {
           email,
         },
@@ -31,7 +31,7 @@ class AdotanteController {
         });
       }
 
-      const novoAdotante = await prismaClient.adotantes.create({
+      const novoAdotante = await prismaClient.Adotante.create({
         data: {
           nome,
           email,
@@ -49,7 +49,7 @@ class AdotanteController {
 
   async buscarAdotantes(req, res) {
     try {
-      const adotantes = await prismaClient.adotantes.findMany();
+      const adotantes = await prismaClient.Adotante.findMany();
 
       if (adotantes.length === 0) {
         return res.status(404).json({
@@ -68,7 +68,7 @@ class AdotanteController {
     const { id } = req.params;
 
     try {
-      const adotante = await prismaClient.adotantes.findUnique({
+      const adotante = await prismaClient.Adotante.findUnique({
         where: { id },
       });
 
@@ -91,7 +91,7 @@ class AdotanteController {
     try {
       const { nome, email, telefone, endereco } = req.body;
 
-      const adotante = await prismaClient.adotantes.findUnique({
+      const adotante = await prismaClient.Adotante.findUnique({
         where: { id },
       });
       if (!adotante) {
@@ -113,7 +113,7 @@ class AdotanteController {
         });
       }
 
-      const adotanteDuplicado = await prismaClient.adotantes.findUnique({
+      const adotanteDuplicado = await prismaClient.Adotante.findUnique({
         where: {
           email,
         },
@@ -125,7 +125,7 @@ class AdotanteController {
         });
       }
 
-      const adotanteAtualizado = await prismaClient.adotantes.update({
+      const adotanteAtualizado = await prismaClient.Adotante.update({
         where: { id },
         data: {
           nome,
@@ -146,7 +146,7 @@ class AdotanteController {
     const { id } = req.params;
 
     try {
-      const adotante = await prismaClient.adotantes.findUnique({
+      const adotante = await prismaClient.Adotante.findUnique({
         where: { id },
       });
 
@@ -156,7 +156,7 @@ class AdotanteController {
         });
       }
 
-      await prismaClient.adotantes.delete({
+      await prismaClient.Adotante.delete({
         where: { id },
       });
       return res.status(200).json({

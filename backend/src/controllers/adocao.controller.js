@@ -9,10 +9,10 @@ class AdocaoController {
         data_adocao: dataAdocao,
       } = req.body;
 
-      const petInfo = await prismaClient.pets.findUnique({
+      const petInfo = await prismaClient.Pet.findUnique({
         where: { id: petId },
       });
-      const adotanteInfo = await prismaClient.adotantes.findUnique({
+      const adotanteInfo = await prismaClient.Adotante.findUnique({
         where: { id: adotanteId },
       });
 
@@ -22,7 +22,7 @@ class AdocaoController {
           .json({ message: "Pet ou adotante não encontrado." });
       }
 
-      const novaAdocao = await prismaClient.adocoes.create({
+      const novaAdocao = await prismaClient.Adocao.create({
         data: {
           pet_id: petId,
           adotante_id: adotanteId,
@@ -39,7 +39,7 @@ class AdocaoController {
 
   async buscarAdocoes(req, res) {
     try {
-      const adocoes = await prismaClient.adocoes.findMany();
+      const adocoes = await prismaClient.Adocao.findMany();
 
       if (adocoes.length === 0) {
         return res.status(404).json({
@@ -58,7 +58,7 @@ class AdocaoController {
     const { id } = req.params;
 
     try {
-      const adocao = await prismaClient.adocoes.findUnique({
+      const adocao = await prismaClient.Adocao.findUnique({
         where: { id },
         include: {
           pets: true,
@@ -89,7 +89,7 @@ class AdocaoController {
         data_adocao: dataAdocao,
       } = req.body;
 
-      const adocaoExistente = await prismaClient.adocoes.findUnique({
+      const adocaoExistente = await prismaClient.Adocao.findUnique({
         where: { id },
       });
       if (!adocaoExistente) {
@@ -99,7 +99,7 @@ class AdocaoController {
       }
 
       if (petId) {
-        const petInfo = await prismaClient.pets.findUnique({
+        const petInfo = await prismaClient.Pet.findUnique({
           where: { id: petId },
         });
         if (!petInfo) {
@@ -108,7 +108,7 @@ class AdocaoController {
       }
 
       if (adotanteId) {
-        const adotanteInfo = await prismaClient.adotantes.findUnique({
+        const adotanteInfo = await prismaClient.Adotante.findUnique({
           where: { id: adotanteId },
         });
         if (!adotanteInfo) {
@@ -116,7 +116,7 @@ class AdocaoController {
         }
       }
 
-      const adocaoAtualizada = await prismaClient.adocoes.update({
+      const adocaoAtualizada = await prismaClient.Adocao.update({
         where: { id },
         data: {
           pet_id: petId || adocaoExistente.pet_id,
@@ -138,7 +138,7 @@ class AdocaoController {
     const { id } = req.params;
 
     try {
-      const adocao = await prismaClient.adocoes.findUnique({
+      const adocao = await prismaClient.Adocao.findUnique({
         where: { id },
       });
 
@@ -148,7 +148,7 @@ class AdocaoController {
         });
       }
 
-      await prismaClient.adocoes.delete({
+      await prismaClient.Adocao.delete({
         where: { id },
       });
       return res.status(200).json({

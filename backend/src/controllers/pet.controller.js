@@ -19,7 +19,7 @@ class PetController {
         });
       }
 
-      const novoPet = await prismaClient.pets.create({
+      const novoPet = await prismaClient.Pet.create({
         data: {
           nome,
           especie,
@@ -39,7 +39,7 @@ class PetController {
 
   async buscarPets(req, res) {
     try {
-      const pets = await prismaClient.pets.findMany();
+      const pets = await prismaClient.Pet.findMany();
 
       if (pets.length === 0) {
         return res.status(404).json({
@@ -58,7 +58,7 @@ class PetController {
     const { id } = req.params;
 
     try {
-      const pet = await prismaClient.pets.findUnique({
+      const pet = await prismaClient.Pet.findUnique({
         where: { id },
       });
 
@@ -94,7 +94,7 @@ class PetController {
         });
       }
 
-      const pet = await prismaClient.pets.findUnique({
+      const pet = await prismaClient.Pet.findUnique({
         where: { id },
       });
       if (!pet) {
@@ -103,7 +103,7 @@ class PetController {
         });
       }
 
-      const petAtualizado = await prismaClient.pets.update({
+      const petAtualizado = await prismaClient.Pet.update({
         where: { id },
         data: {
           nome,
@@ -125,7 +125,7 @@ class PetController {
     const { id } = req.params;
 
     try {
-      const pet = await prismaClient.pets.findUnique({
+      const pet = await prismaClient.Pet.findUnique({
         where: { id },
       });
 
@@ -135,7 +135,7 @@ class PetController {
         });
       }
 
-      await prismaClient.pets.delete({
+      await prismaClient.Pet.delete({
         where: { id },
       });
       return res.status(200).json({
