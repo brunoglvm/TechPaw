@@ -8,36 +8,30 @@ datasource db {
   url = env("DATABASE_URL")
 }
 
-model Adocao {
-  id          String   @id @default(uuid())
+model adocoes {
+  id          String    @id @default(uuid())
   pet_id      String
   adotante_id String
-  data_adocao DateTime @db.Date
-  adotantes   Adotante @relation(fields: [adotante_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
-  pets        Pet      @relation(fields: [pet_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
-
-  @@map("adocoes")
+  data_adocao DateTime  @db.Date
+  adotantes   adotantes @relation(fields: [adotante_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  pets        pets      @relation(fields: [pet_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
 }
 
-model Adotante {
-  id       String   @id @default(uuid())
-  nome     String   @db.VarChar(100)
-  email    String   @unique @db.VarChar(100)
-  telefone String   @db.VarChar(20)
-  endereco String   @db.VarChar(255)
-  adocoes  Adocao[]
-
-  @@map("adotantes")
+model adotantes {
+  id       String    @id @default(uuid())
+  nome     String    @db.VarChar(100)
+  email    String    @unique @db.VarChar(100)
+  telefone String    @db.VarChar(20)
+  endereco String    @db.VarChar(255)
+  adocoes  adocoes[]
 }
 
-model Pet {
-  id        String   @id @default(uuid())
-  nome      String   @db.VarChar(100)
-  especie   String   @db.VarChar(50)
+model pets {
+  id        String    @id @default(uuid())
+  nome      String    @db.VarChar(100)
+  especie   String    @db.VarChar(50)
   idade     Int
-  descricao String?  @db.Text
-  status    String   @db.VarChar(50)
-  adocoes   Adocao[]
-
-  @@map("pets")
+  descricao String?   @db.Text
+  status    String    @db.VarChar(50)
+  adocoes   adocoes[]
 }
