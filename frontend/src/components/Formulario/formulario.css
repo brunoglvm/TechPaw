@@ -41,15 +41,17 @@
 
 .form-group label {
   margin-bottom: 0.5rem;
-  font-weight: bold;
+  font-weight: var(--font-weight-md);
   color: var(--text-color);
 }
 
-.form-group input {
+.form-group input,
+.form-group textarea {
   padding: 0.8rem;
   font-size: 1rem;
   border: 1px solid var(--border-color);
   border-radius: 4px;
+  resize: none;
 }
 
 .form-group:focus-visible {

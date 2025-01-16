@@ -11,7 +11,7 @@
 
 .filtro-container h3 {
   color: var(--text-light);
-  margin-bottom: 1rem;
+  margin: 1rem 1rem;
   font-size: 1.5rem;
 }
 
@@ -22,22 +22,20 @@
 
 .filtro-container label {
   color: var(--text-light);
-  margin-bottom: 0.8rem;
+  font-weight: var(--font-weight-reg);
+  margin-bottom: 1.8rem;
 }
 
 .filtro-container select,
 .filtro-container input {
-  padding: 0.8rem;
-  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: var(--font-weight-reg);
+  background-color: var(--card-color);
+  color: var(--text-muted);
   border: 1px solid var(--border-color);
   border-radius: 4px;
-  font-size: 1rem;
+  padding: 0.8rem;
   width: 100%;
-}
-
-.filtro-container select:focus,
-.filtro-container input:focus {
-  outline: none;
 }
 
 .pets-container {
@@ -53,7 +51,7 @@
 }
 
 .pet-card {
-  background-color: #f8f8f8;
+  background-color: var(--card-color);
   border-radius: 8px;
   box-shadow: 0 2px 5px var(--shadow-color);
   overflow: hidden;

@@ -61,7 +61,6 @@ function Pet({ onAddPet, pets = [] }) {
           <input
             type="text"
             name="especie"
-            className="form-input"
             placeholder="Espécie"
             value={formData.especie}
             onChange={handleChange}
@@ -73,7 +72,6 @@ function Pet({ onAddPet, pets = [] }) {
           <input
             type="number"
             name="idade"
-            className="form-input"
             placeholder="Idade"
             value={formData.idade}
             onChange={handleChange}
@@ -87,7 +85,6 @@ function Pet({ onAddPet, pets = [] }) {
           <textarea
             name="raca"
             id="raca"
-            className="form-input"
             placeholder="Raça"
             value={formData.raca}
             onChange={handleChange}
@@ -100,7 +97,6 @@ function Pet({ onAddPet, pets = [] }) {
           <input
             type="file"
             name="foto"
-            className="form-file"
             accept="image/*"
             onChange={handleChange}
           />

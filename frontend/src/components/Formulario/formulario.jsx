@@ -95,7 +95,9 @@ export function Formulario() {
         />
       </div>
 
-      <button type="submit">Cadastrar</button>
+      <button type="submit" className="submit-btn">
+        Cadastrar-se
+      </button>
     </form>
   );
 }

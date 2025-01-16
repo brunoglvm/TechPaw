@@ -12,10 +12,10 @@ body {
   line-height: 1.6;
 }
 
-:is(a, input, textarea, button, select):focus-visible {
+:is(a, input, textarea, button, select):focus-visible,
+select:focus {
   outline: none;
-  border: none;
-  box-shadow: 0 0 0 2px var(--highlight-color);
+  box-shadow: 0 0 0 2px var(--primary-color), 0 0 0 4px var(--highlight-color);
   border-radius: 4px;
 }
 
@@ -35,7 +35,8 @@ h3 {
 }
 
 .submit-btn {
-  width: 80%;
-  margin: 3rem;
   font-size: 1.2rem;
+  font-weight: var(--font-weight-md);
+  width: 80%;
+  margin: 2.5rem;
 }
