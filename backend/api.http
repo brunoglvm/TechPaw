@@ -1,0 +1,134 @@
+# ==========================
+# Requisições de Adotantes
+# ==========================
+
+###
+
+# Criar um novo adotante
+POST http://localhost:3000/api/v1/adotantes
+Content-Type: application/json
+
+{
+    "nome": "Test",
+    "email": "test@email.com",
+    "telefone": "(71) 00000-0000",
+    "endereco": "Rua das Flores, 123, Bairro Jardim, Salvador, BA, CEP: 40000-000"
+}
+
+###
+
+# Buscar todos os adotantes
+GET http://localhost:3000/api/v1/adotantes
+
+###
+
+# Buscar adotante por ID
+GET http://localhost:3000/api/v1/adotantes/a45cbfc2-03fd-4b32-8008-174381b5600e
+
+###
+
+# Atualizar adotante
+PUT http://localhost:3000/api/v1/adotantes/a45cbfc2-03fd-4b32-8008-174381b5600e
+Content-Type: application/json
+
+{
+    "nome": "Bruno Galvão",
+    "email": "bgalvaomiranda302@gmail.com",
+    "telefone": "(71) 12345-6789",
+    "endereco": "Rua do Sol, 789, Bloco C, Bairro Nova Vida, Salvador, BA, CEP: 40210-200"
+}
+
+###
+
+# Deletar adotante
+DELETE http://localhost:3000/api/v1/adotantes/a45cbfc2-03fd-4b32-8008-174381b5600e
+
+
+# ==========================
+# Requisições de Pets
+# ==========================
+
+###
+
+# Criar um novo pet
+POST http://localhost:3000/api/v1/pets
+Content-Type: application/json
+
+{
+  "nome": "Toby",
+  "especie": "Cachorro",
+  "idade": 12,
+  "descricao": "Yorkshire agitado",
+  "status": "adotado"
+}
+
+###
+
+# Buscar todos os pets
+GET http://localhost:3000/api/v1/pets
+
+###
+
+# Buscar pet por ID
+GET http://localhost:3000/api/v1/pets/d7ce16e1-3f5f-4ec3-9c96-6040f7b4bf85
+
+###
+
+# Atualizar pet
+PUT http://localhost:3000/api/v1/pets/d7ce16e1-3f5f-4ec3-9c96-6040f7b4bf85
+Content-Type: application/json
+
+{
+  "nome": "Luna",
+  "especie": "Cachorro",
+  "idade": 8,
+  "descricao": "Caramelo amigável",
+  "status": "adotado"
+}
+
+###
+
+# Deletar pet
+DELETE http://localhost:3000/api/v1/pets/d7ce16e1-3f5f-4ec3-9c96-6040f7b4bf85
+
+
+# ==========================
+# Requisições de Adoções
+# ==========================
+
+###
+
+# Criar uma nova adoção
+POST http://localhost:3000/api/v1/adocoes
+Content-Type: application/json
+
+{
+  "pet_id": "d7ce16e1-3f5f-4ec3-9c96-6040f7b4bf85",
+  "adotante_id": "a45cbfc2-03fd-4b32-8008-174381b5600e",
+  "data_adocao": "2025-01-16"
+}
+
+###
+
+# Buscar todas as adoções
+GET http://localhost:3000/api/v1/adocoes
+
+###
+
+# Buscar adoção por ID
+GET http://localhost:3000/api/v1/adocoes/422e56bd-5bef-4ca2-a87c-5c5e0ca51ee8
+
+###
+
+# Atualizar adoção
+PATCH http://localhost:3000/api/v1/adocoes/422e56bd-5bef-4ca2-a87c-5c5e0ca51ee8
+Content-Type: application/json
+
+{
+  "data_adocao": "2025-02-01"
+}
+
+###
+
+# Deletar adoção
+DELETE http://localhost:3000/api/v1/adocoes/422e56bd-5bef-4ca2-a87c-5c5e0ca51ee8
