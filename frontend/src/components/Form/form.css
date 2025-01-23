@@ -4,7 +4,7 @@
   margin: 20px auto;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px var(--shadow-color);
 }
 
 .pet-form-title {
@@ -22,7 +22,7 @@
   max-width: 500px;
   width: 100%;
   padding: 20px;
-  background-color: var(--text-light);
+  background-color: var(--light-color);
   border-radius: 8px;
   box-shadow: 0 4px 8px var(--shadow-color);
 }
@@ -52,10 +52,6 @@
   border: 1px solid var(--border-color);
   border-radius: 4px;
   resize: none;
-}
-
-.form-group:focus-visible {
-  color: #157024;
 }
 
 .form-select {

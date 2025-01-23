@@ -3,7 +3,7 @@ import "./adotante.css";
 
 import cachorro from "@/assets/cachorro.png";
 
-import { Formulario } from "@/components/Formulario/formulario";
+import { Form } from "@/components/Form/form";
 import { Header } from "@/components/Header/header";
 
 function Adotante() {
@@ -19,7 +19,7 @@ function Adotante() {
             className="form-image"
           />
           {}
-          <Formulario />
+          <Form />
         </div>
         {}
       </main>

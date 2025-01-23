@@ -6,7 +6,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: var(--text-light);
+  color: var(--light-color);
   text-align: center;
 }
 
@@ -17,22 +17,12 @@
 }
 
 .banner-subtitle {
-  font-size: 1.5rem;
-  font-weight: var(--font-weight-md);
-}
-
-.section-title {
-  font-size: 2.5rem;
-  font-weight: var(--font-weight-bd);
-  color: var(--text-dark);
-  margin-bottom: 1rem;
+  font-size: 1.4rem;
 }
 
 /* Por Que Adotar */
 .por-que-adotar {
   padding: 2rem;
-  background-color: var(--text-light);
-  border-radius: 8px;
 }
 
 .cards {
@@ -42,33 +32,31 @@
 }
 
 .card {
-  background-color: var(--text-light);
+  background-color: var(--light-color);
   border: 2px solid var(--highlight-color);
-  border-radius: 8px;
   box-shadow: 0 4px 6px var(--shadow-color);
+  border-radius: 8px;
   text-align: center;
   padding: 2rem;
   max-width: 600px;
 }
 
 .card h3 {
-  font-size: 1.7rem;
-  font-weight: var(--font-weight-sb);
   color: var(--primary-color);
   margin-bottom: 0.5rem;
 }
 
 .card ul {
-  list-style: none;
   padding: 0;
   text-align: center;
 }
 
 .card ul li {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
+  font-family: var(--font-family-secondary);
   font-weight: var(--font-weight-reg);
   margin-bottom: 0.5rem;
-  color: var(--text-dark);
+  color: var(--dark-color);
 }
 
 /* Animais Disponíveis */
@@ -79,7 +67,7 @@
 .animais-disponiveis h2 {
   font-size: 2rem;
   font-weight: var(--font-weight-bd);
-  color: var(--text-dark);
+  color: var(--dark-color);
   text-align: center;
   margin-bottom: 1rem;
 }
@@ -113,21 +101,15 @@
   margin: 10px 0;
 }
 
-.animal-card p {
-  font-size: 1rem;
-  font-weight: var(--font-weight-reg);
-  color: var(--text-muted);
-}
-
 .animal-card:hover {
   transform: translateY(-5px);
 }
 
 .link-detalhes {
-  text-decoration: none;
+  font-family: var(--font-family-secondary);
+  font-weight: var(--font-weight-bd);
   color: var(--highlight-color);
-  font-weight: bold;
-  margin-top: 10px;
+  margin-top: 1rem;
   display: inline-block;
   padding: 8px 16px;
   border: 2px solid var(--highlight-color);
@@ -137,7 +119,7 @@
 
 .link-detalhes:hover {
   background-color: var(--highlight-color);
-  color: var(--text-light);
+  color: var(--light-color);
 }
 
 /* Informações Educativas */
@@ -150,7 +132,7 @@
 .informacoes-educativas h2 {
   font-size: 2rem;
   text-align: center;
-  color: var(--text-light);
+  color: var(--light-color);
   margin-bottom: 1rem;
 }
 
@@ -162,7 +144,7 @@
 }
 
 .educacao-card {
-  background-color: var(--text-light);
+  background-color: var(--light-color);
   padding: 1rem;
   text-align: center;
   border: 2px solid var(--highlight-color);
@@ -173,14 +155,8 @@
 .educacao-card h3 {
   font-size: 1.5rem;
   font-weight: var(--font-weight-sb);
-  color: var(--text-dark);
+  color: var(--dark-color);
   margin-bottom: 1rem;
-}
-
-.educacao-card p {
-  font-size: 1rem;
-  font-weight: var(--font-weight-reg);
-  color: var(--text-muted);
 }
 
 .educacao-card img {
@@ -194,16 +170,15 @@
 /* Contato */
 .contato {
   background-color: var(--secondary-color);
-  color: var(--text-light);
+  color: var(--light-color);
   text-align: center;
   border-radius: 0 0 8px 8px;
   padding: 2rem;
 }
 
 .contato h2 {
-  font-size: 2rem;
   font-weight: var(--font-weight-md);
-  color: var(--text-light);
+  color: var(--light-color);
   text-align: center;
   margin-bottom: 1rem;
 }
@@ -220,27 +195,17 @@
   width: 100%;
   height: 44px;
   padding: 1rem;
-  font-size: 1rem;
-  border: none;
-  border-radius: 4px;
-  font-family: Arial, Helvetica, sans-serif;
-  resize: none;
 }
 
 .form-contato textarea {
   width: 100%;
   height: 88px;
   padding: 0.8rem;
-  font-size: 1rem;
-  border: none;
-  border-radius: 4px;
-  font-family: Arial, Helvetica, sans-serif;
-  resize: none;
 }
 
 .form-contato button {
   background-color: var(--primary-color);
-  color: var(--text-light);
+  color: var(--light-color);
   padding: 0.8rem;
   font-size: 1rem;
   border: none;

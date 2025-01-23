@@ -12,7 +12,6 @@ import maxFoto from "@/assets/max.jpg";
 import charlieFoto from "@/assets/charlie.jpg";
 
 import { Header } from "@/components/Header/header";
-import { Button } from "@/components/Button/button";
 import { Footer } from "@/components/Footer/footer";
 
 // Função para obter os pets disponíveis
@@ -97,7 +96,7 @@ function Home() {
 
       {/* Por Que Adotar? */}
       <section className="por-que-adotar">
-        <h2 className="section-title">Por Que Adotar?</h2>
+        <h2>Por Que Adotar?</h2>
         <div className="cards">
           <div className="card">
             <h3>Benefícios de Adotar</h3>
@@ -153,7 +152,7 @@ function Home() {
         <h2>Informações Educativas</h2>
         <div className="educacao-grid">
           <div className="educacao-card">
-            <img src={cachorroFeliz} alt="Cachorro Feliz" />
+            <img src={cachorroFeliz} alt="Cachorro e dona" />
             <h3>Cuidados com Animais Adotados</h3>
             <p>
               Animais adotados precisam de atenção especial. Alimentação
@@ -168,7 +167,6 @@ function Home() {
             <img src={cachorro1} alt="Cachorro e dono" />
             <h3>Responsabilidade e Compromisso</h3>
             <p>
-              {" "}
               Adotar um animal é um ato de amor, mas também uma grande
               responsabilidade. Você estará assumindo o compromisso de cuidar
               dele por toda a sua vida. Isso significa garantir alimentação,
@@ -217,7 +215,7 @@ function Home() {
             required
           />
 
-          <Button className=".button" />
+          <button>Enviar</button>
         </form>
       </section>
       <Footer />

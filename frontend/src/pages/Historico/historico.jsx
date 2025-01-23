@@ -1,4 +1,5 @@
 import React from "react";
+import "./historico.css";
 
 import auroraImage from "@/assets/aurora.jpg";
 import bruceImage from "@/assets/bruce.jpg";
@@ -83,14 +84,9 @@ function Historico() {
   };
 
   return (
-    <div style={{ marginTop: "6rem" }}>
+    <div className="historico-main">
       <Header />
-      <h3>
-        Aqui no TechPaw, trabalhamos todos os dias para encontrar lares amorosos
-        para os animais que resgatamos. <br />
-        Veja quem ja encontrou um lar! Conheça alguns dos nossos animais
-        adotados:
-      </h3>
+      <h1 className="">Conheça alguns dos nossos animais adotados</h1>
       <div style={gridStyle} className="pets-container">
         {adotados.map((adotado) => (
           <div key={adotado.id} className="pet-card">

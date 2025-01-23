@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "./formulario.css";
+import "./form.css";
 
-export function Formulario() {
+export function Form() {
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [telefone, setTelefone] = useState("");

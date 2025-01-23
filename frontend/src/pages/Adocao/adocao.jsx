@@ -220,22 +220,24 @@ function Adocao() {
       {/* Lista de Pets */}
       <h2>Pets Disponíveis para Adoção</h2>
       <div className="pets-container">
-        {pets.map((pet) => (
-          <div key={pet.id} className="pet-card">
-            <img
-              src={pet.foto || "https://via.placeholder.com/150"}
-              alt={pet.nome}
-              className="pet-image"
-            />
-            <div className="pet-info">
-              <h3>{pet.nome}</h3>
-              <p>Raça: {pet.raca}</p>
-              <p>Porte: {pet.porte}</p>
-              <p>Idade: {pet.idade} anos</p>
-              <button>Quero Adotar</button>
-            </div>
-          </div>
-        ))}
+        <ul>
+          {pets.map((pet) => (
+            <li key={pet.id} className="pet-card">
+              <img
+                src={pet.foto || "https://via.placeholder.com/150"}
+                alt={pet.nome}
+                className="pet-image"
+              />
+              <div className="pet-info">
+                <h3>{pet.nome}</h3>
+                <p>Raça: {pet.raca}</p>
+                <p>Porte: {pet.porte}</p>
+                <p>Idade: {pet.idade} anos</p>
+                <button>Quero Adotar</button>
+              </div>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
