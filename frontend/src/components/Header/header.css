@@ -20,15 +20,12 @@
 }
 
 .header nav a {
-  font-size: 1.2rem;
-  font-family: var(--font-family-secondary);
-  font-weight: var(--font-weight-sb);
+  font-size: 1.125rem;
   color: var(--light-color);
-  text-decoration: none;
   transition: color 0.3s ease-in-out;
   padding-bottom: 0.2rem;
-}
 
-.header nav a:hover {
-  color: var(--secondary-color);
+  &:hover {
+    color: var(--secondary-color);
+  }
 }

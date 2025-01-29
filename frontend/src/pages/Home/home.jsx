@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./home.css";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStarOfLife } from "@fortawesome/free-solid-svg-icons";
+
+import { Header } from "@/components/Header/header";
+import { Footer } from "@/components/Footer/footer";
+
 import gatoBanner from "@/assets/gato2.png";
 import cachorroFeliz from "@/assets/cachorro-feliz.png";
 import cachorro2 from "@/assets/cachorro2.png";
@@ -10,9 +16,6 @@ import miloFoto from "@/assets/milo.jpg";
 import miaFoto from "@/assets/mia.jpg";
 import maxFoto from "@/assets/max.jpg";
 import charlieFoto from "@/assets/charlie.jpg";
-
-import { Header } from "@/components/Header/header";
-import { Footer } from "@/components/Footer/footer";
 
 // Função para obter os pets disponíveis
 const buscarPets = async () => {
@@ -101,18 +104,49 @@ function Home() {
           <div className="card">
             <h3>Benefícios de Adotar</h3>
             <ul>
-              <li>Ajuda a combater o abandono animal.</li>
-              <li>Ganha um companheiro fiel e amoroso.</li>
-              <li>Reduz o estresse e aumenta a felicidade.</li>
+              <li>
+                <FontAwesomeIcon
+                  icon={faStarOfLife}
+                  size="xs"
+                  className="list-item-icon"
+                />
+                Ajuda a combater o abandono animal.
+              </li>
+              <li>
+                <FontAwesomeIcon
+                  icon={faStarOfLife}
+                  size="xs"
+                  className="list-item-icon"
+                />
+                Ganha um companheiro fiel e amoroso.
+              </li>
+              <li>
+                <FontAwesomeIcon
+                  icon={faStarOfLife}
+                  size="xs"
+                  className="list-item-icon"
+                />
+                Reduz o estresse e aumenta a felicidade.
+              </li>
             </ul>
           </div>
           <div className="card">
             <h3>Adotar é um Ato de Amor</h3>
             <ul>
               <li>
+                <FontAwesomeIcon
+                  icon={faStarOfLife}
+                  size="xs"
+                  className="list-item-icon"
+                />
                 Proporciona uma nova oportunidade para quem precisa de carinho.
               </li>
               <li>
+                <FontAwesomeIcon
+                  icon={faStarOfLife}
+                  size="xs"
+                  className="list-item-icon"
+                />
                 É uma forma de contribuir para um mundo melhor para todos.
               </li>
             </ul>
@@ -120,9 +154,30 @@ function Home() {
           <div className="card">
             <h3>Adoção Transforma Vidas</h3>
             <ul>
-              <li>Oferece uma segunda chance para o animal.</li>
-              <li>Cria um vínculo único entre humano e pet.</li>
-              <li>Impacta positivamente na sociedade.</li>
+              <li>
+                <FontAwesomeIcon
+                  icon={faStarOfLife}
+                  size="xs"
+                  className="list-item-icon"
+                />
+                Oferece uma segunda chance para o animal.
+              </li>
+              <li>
+                <FontAwesomeIcon
+                  icon={faStarOfLife}
+                  size="xs"
+                  className="list-item-icon"
+                />
+                Cria um vínculo único entre humano e pet.
+              </li>
+              <li>
+                <FontAwesomeIcon
+                  icon={faStarOfLife}
+                  size="xs"
+                  className="list-item-icon"
+                />
+                Impacta positivamente na sociedade.
+              </li>
             </ul>
           </div>
         </div>

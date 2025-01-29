@@ -20,8 +20,8 @@ h2 {
 }
 
 h3 {
-  font-size: 1.7rem;
-  line-height: 2rem;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
   font-weight: var(--font-weight-sb);
   text-align: center;
 }
@@ -34,6 +34,11 @@ p {
   text-align: center;
 }
 
+a {
+  font-family: var(--font-family-secondary);
+  font-weight: var(--font-weight-sb);
+}
+
 input,
 textarea,
 select {
@@ -42,31 +47,30 @@ select {
   font-weight: var(--font-weight-reg);
   background-color: var(--light-color);
   color: var(--dark-color);
-  border-radius: 4px;
+  border-radius: 8px;
   border: none;
   resize: none;
 }
 
 button {
-  font-size: 1rem;
-  font-weight: var(--font-weight-bd);
-  background-color: var(--secondary-color);
-  color: var(--light-color);
-  padding: 1rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: var(--btn-hover-color);
-}
-
-.submit-btn {
   font-size: 1.2rem;
   font-family: var(--font-family-secondary);
   font-weight: var(--font-weight-bd);
+  background-color: var(--primary-color);
+  color: var(--light-color);
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
   text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: var(--btn-hover-color);
+  }
+}
+
+.submit-btn {
   width: 80%;
   margin: 2.5rem;
 }

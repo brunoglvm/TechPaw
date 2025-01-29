@@ -2,8 +2,7 @@
 .filtro-container {
   position: fixed;
   background-color: var(--primary-color);
-  padding: 2rem;
-  margin-top: 2rem;
+  padding: 4.25rem 2rem;
   height: 100vh;
   width: 18rem; /* Largura do filtro */
   z-index: 100;
@@ -51,10 +50,10 @@
   width: 20rem;
   border: 1px solid var(--border-color);
   transition: transform 0.3s ease;
-}
 
-.pet-card:hover {
-  transform: translateY(-5px);
+  &:hover {
+    transform: translateY(-5px);
+  }
 }
 
 .pet-image {
