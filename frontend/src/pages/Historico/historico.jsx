@@ -1,5 +1,5 @@
 import React from "react";
-import "./historico.css";
+import styles from "./historico.module.css";
 
 import auroraImage from "@/assets/aurora.jpg";
 import bruceImage from "@/assets/bruce.jpg";
@@ -84,14 +84,18 @@ function Historico() {
   };
 
   return (
-    <div className="historico-main">
+    <div className={styles.historicoMain}>
       <Header />
-      <h1 className="">Conheça alguns dos nossos animais adotados</h1>
-      <div style={gridStyle} className="pets-container">
+      <h1>Conheça alguns dos nossos animais adotados</h1>
+      <div style={gridStyle} className={styles.petsContainer}>
         {adotados.map((adotado) => (
-          <div key={adotado.id} className="pet-card">
-            <img src={adotado.foto} alt={adotado.nome} className="pet-image" />
-            <div className="pet-info">
+          <div key={adotado.id} className={styles.petCard}>
+            <img
+              src={adotado.foto}
+              alt={adotado.nome}
+              className={styles.petImage}
+            />
+            <div className={styles.petInfo}>
               <h3>{adotado.nome}</h3>
               <p>Especie: {adotado.especie}</p>
               <p>Sexo: {adotado.sexo}</p>

@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import "./styles/vars.css";
 import "./styles/global.css";
-import "./styles/media-queries.css";
 
 import Home from "./pages/Home/home";
 import Adotante from "./pages/Adotante/adotante";

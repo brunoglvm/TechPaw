@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./adocao.css";
+import styles from "./adocao.module.css";
 
 import maxImage from "@/assets/max.jpg";
 import miaImage from "@/assets/mia.jpg";
@@ -161,7 +161,7 @@ function Adocao() {
     <div>
       <Header />
       {/* Filtros */}
-      <div className="filtro-container">
+      <div className={styles.filtroContainer}>
         <h3>Filtrar Pets</h3>
         <form>
           <label>
@@ -219,16 +219,16 @@ function Adocao() {
 
       {/* Lista de Pets */}
       <h2>Pets Disponíveis para Adoção</h2>
-      <div className="pets-container">
+      <div className={styles.petsContainer}>
         <ul>
           {pets.map((pet) => (
-            <li key={pet.id} className="pet-card">
+            <li key={pet.id} className={styles.petCard}>
               <img
                 src={pet.foto || "https://via.placeholder.com/150"}
                 alt={pet.nome}
-                className="pet-image"
+                className={styles.petImage}
               />
-              <div className="pet-info">
+              <div className={styles.petInfo}>
                 <h3>{pet.nome}</h3>
                 <p>Raça: {pet.raca}</p>
                 <p>Porte: {pet.porte}</p>

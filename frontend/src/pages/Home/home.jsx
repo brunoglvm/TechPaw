@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./home.css";
+import styles from "./home.module.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStarOfLife } from "@fortawesome/free-solid-svg-icons";
@@ -89,26 +89,26 @@ function Home() {
     <div>
       <Header />
       {/* Banner */}
-      <section className="banner">
-        <h1 className="banner-title">TechPaw</h1>
-        <p className="banner-subtitle">
+      <section className={styles.banner}>
+        <h1 className={styles.bannerTitle}>TechPaw</h1>
+        <p className={styles.bannerSubtitle}>
           Encontre seu melhor amigo de quatro patas aqui!
         </p>
         <img src={gatoBanner} alt="Imagem de um gato com seu dono" />
       </section>
 
       {/* Por Que Adotar? */}
-      <section className="por-que-adotar">
+      <section className={styles.porQueAdotar}>
         <h2>Por Que Adotar?</h2>
-        <div className="cards">
-          <div className="card">
+        <div className={styles.cards}>
+          <div className={styles.card}>
             <h3>Benefícios de Adotar</h3>
             <ul>
               <li>
                 <FontAwesomeIcon
                   icon={faStarOfLife}
                   size="xs"
-                  className="list-item-icon"
+                  className={styles.listItemIcon}
                 />
                 Ajuda a combater o abandono animal.
               </li>
@@ -116,7 +116,7 @@ function Home() {
                 <FontAwesomeIcon
                   icon={faStarOfLife}
                   size="xs"
-                  className="list-item-icon"
+                  className={styles.listItemIcon}
                 />
                 Ganha um companheiro fiel e amoroso.
               </li>
@@ -124,20 +124,20 @@ function Home() {
                 <FontAwesomeIcon
                   icon={faStarOfLife}
                   size="xs"
-                  className="list-item-icon"
+                  className={styles.listItemIcon}
                 />
                 Reduz o estresse e aumenta a felicidade.
               </li>
             </ul>
           </div>
-          <div className="card">
+          <div className={styles.card}>
             <h3>Adotar é um Ato de Amor</h3>
             <ul>
               <li>
                 <FontAwesomeIcon
                   icon={faStarOfLife}
                   size="xs"
-                  className="list-item-icon"
+                  className={styles.listItemIcon}
                 />
                 Proporciona uma nova oportunidade para quem precisa de carinho.
               </li>
@@ -145,20 +145,20 @@ function Home() {
                 <FontAwesomeIcon
                   icon={faStarOfLife}
                   size="xs"
-                  className="list-item-icon"
+                  className={styles.listItemIcon}
                 />
                 É uma forma de contribuir para um mundo melhor para todos.
               </li>
             </ul>
           </div>
-          <div className="card">
+          <div className={styles.card}>
             <h3>Adoção Transforma Vidas</h3>
             <ul>
               <li>
                 <FontAwesomeIcon
                   icon={faStarOfLife}
                   size="xs"
-                  className="list-item-icon"
+                  className={styles.listItemIcon}
                 />
                 Oferece uma segunda chance para o animal.
               </li>
@@ -166,7 +166,7 @@ function Home() {
                 <FontAwesomeIcon
                   icon={faStarOfLife}
                   size="xs"
-                  className="list-item-icon"
+                  className={styles.listItemIcon}
                 />
                 Cria um vínculo único entre humano e pet.
               </li>
@@ -174,7 +174,7 @@ function Home() {
                 <FontAwesomeIcon
                   icon={faStarOfLife}
                   size="xs"
-                  className="list-item-icon"
+                  className={styles.listItemIcon}
                 />
                 Impacta positivamente na sociedade.
               </li>
@@ -184,17 +184,21 @@ function Home() {
       </section>
 
       {/* Animais Disponíveis */}
-      <section className="animais-disponiveis">
+      <section className={styles.animaisDisponiveis}>
         <h2>Animais Disponíveis para Adoção</h2>
-        <div className="animais-grid">
+        <div className={styles.animaisGrid}>
           {pets.map((pet) => (
-            <div key={pet.id} className="animal-card">
-              <img src={pet.foto} alt={pet.nome} className="animal-image" />
+            <div key={pet.id} className={styles.animalCard}>
+              <img
+                src={pet.foto}
+                alt={pet.nome}
+                className={styles.animalImage}
+              />
               <h3>{pet.nome}</h3>
               <p>Idade: {pet.idade} anos</p>
               <p>Raça: {pet.raca}</p>
               <p>Porte: {pet.porte}</p>
-              <a href={`/adocao/`} className="link-detalhes">
+              <a href={`/adocao/`} className={styles.linkDetalhes}>
                 Mais detalhes
               </a>
             </div>
@@ -203,10 +207,10 @@ function Home() {
       </section>
 
       {/* Informações Educativas */}
-      <section className="informacoes-educativas">
+      <section className={styles.informacoesEducativas}>
         <h2>Informações Educativas</h2>
-        <div className="educacao-grid">
-          <div className="educacao-card">
+        <div className={styles.educacaoGrid}>
+          <div className={styles.educacaoCard}>
             <img src={cachorroFeliz} alt="Cachorro e dona" />
             <h3>Cuidados com Animais Adotados</h3>
             <p>
@@ -218,7 +222,7 @@ function Home() {
               amigo peludo esteja sempre em dia.
             </p>
           </div>
-          <div className="educacao-card">
+          <div className={styles.educacaoCard}>
             <img src={cachorro1} alt="Cachorro e dono" />
             <h3>Responsabilidade e Compromisso</h3>
             <p>
@@ -229,7 +233,7 @@ function Home() {
               tempo e recursos para proporcionar bem-estar ao seu pet.
             </p>
           </div>
-          <div className="educacao-card">
+          <div className={styles.educacaoCard}>
             <img src={cachorro2} alt="Cachorro e dona" />
             <h3>Importância da Castração e Vacinação</h3>
             <p>
@@ -243,8 +247,9 @@ function Home() {
         </div>
       </section>
 
-      <section className="contato">
-        <form className="form-contato">
+      {/* Contato */}
+      <section className={styles.contato}>
+        <form className={styles.formContato}>
           <h2>Entre em Contato</h2>
 
           <input

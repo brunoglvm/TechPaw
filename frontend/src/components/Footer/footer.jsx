@@ -1,8 +1,8 @@
-import "./footer.css";
+import styles from "./footer.module.css";
 
 export function Footer() {
   return (
-    <footer className="footer">
+    <footer className={styles.footer}>
       <p>TechPaw - Conectando animais abandonados a lares cheios de 💙</p>
     </footer>
   );

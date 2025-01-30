@@ -29,3 +29,10 @@
     color: var(--secondary-color);
   }
 }
+
+@media screen and (max-width: 768px) {
+  .header nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}

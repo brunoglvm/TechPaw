@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styles from "./pet.module.css";
 import { Header } from "@/components/Header/header";
 
 function Pet({ onAddPet, pets = [] }) {
@@ -41,23 +42,23 @@ function Pet({ onAddPet, pets = [] }) {
   return (
     <div>
       <Header />
-      <form className="pet-form" onSubmit={handleSubmit}>
-        <h2 className="pet-form-title">Cadastro de Pet</h2>
+      <form className={styles.petForm} onSubmit={handleSubmit}>
+        <h2 className={styles.petFormTitle}>Cadastro de Pet</h2>
 
-        <div className="form-group">
-          <label className="form-label">Nome do Pet</label>
+        <div className={styles.formGroup}>
+          <label className={styles.formLabel}>Nome do Pet</label>
           <input
             type="text"
             name="nome"
-            className="form-input"
+            className={styles.formInput}
             placeholder="Nome do Pet"
             value={formData.nome}
             onChange={handleChange}
           />
         </div>
 
-        <div className="form-group">
-          <label className="form-label">Espécie</label>
+        <div className={styles.formGroup}>
+          <label className={styles.formLabel}>Espécie</label>
           <input
             type="text"
             name="especie"
@@ -67,8 +68,8 @@ function Pet({ onAddPet, pets = [] }) {
           />
         </div>
 
-        <div className="form-group">
-          <label className="form-label">Idade</label>
+        <div className={styles.formGroup}>
+          <label className={styles.formLabel}>Idade</label>
           <input
             type="number"
             name="idade"
@@ -78,22 +79,22 @@ function Pet({ onAddPet, pets = [] }) {
           />
         </div>
 
-        <div className="form-group">
-          <label className="form-label" htmlFor="raca">
+        <div className={styles.formGroup}>
+          <label className={styles.formLabel} htmlFor="descricao">
             Descrição
           </label>
           <textarea
-            name="raca"
-            id="raca"
-            placeholder="Raça"
-            value={formData.raca}
+            name="descricao"
+            id="descricao"
+            placeholder="Descrição"
+            value={formData.descricao}
             onChange={handleChange}
             rows="4"
           ></textarea>
         </div>
 
-        <div className="form-group">
-          <label className="form-label">Foto</label>
+        <div className={styles.formGroup}>
+          <label className={styles.formLabel}>Foto</label>
           <input
             type="file"
             name="foto"
@@ -103,34 +104,38 @@ function Pet({ onAddPet, pets = [] }) {
         </div>
 
         {formData.foto && (
-          <div className="form-group">
-            <h3 className="photo-title">Foto do Pet:</h3>
+          <div className={styles.formGroup}>
+            <h3 className={styles.photoTitle}>Foto do Pet:</h3>
             <img
-              className="pet-photo"
+              className={styles.petPhoto}
               src={URL.createObjectURL(formData.foto)}
               alt="Pet"
             />
           </div>
         )}
 
-        <button type="submit" className="submit-btn">
+        <button type="submit" className={styles.submitBtn}>
           Cadastrar Pet
         </button>
       </form>
 
       {/* Animais Disponíveis */}
-      <section className="animais-disponiveis">
-        <h2 className="section-title">Animais Disponíveis para Adoção</h2>
-        <div className="animais-grid">
+      <section className={styles.animaisDisponiveis}>
+        <h2 className={styles.sectionTitle}>Animais Disponíveis para Adoção</h2>
+        <div className={styles.animaisGrid}>
           {petsDisponiveis.length > 0 ? (
             petsDisponiveis.map((pet) => (
-              <div key={pet.id} className="animal-card">
-                <img src={pet.foto} alt={pet.nome} className="animal-image" />
+              <div key={pet.id} className={styles.animalCard}>
+                <img
+                  src={pet.foto}
+                  alt={pet.nome}
+                  className={styles.animalImage}
+                />
                 <h3>{pet.nome}</h3>
                 <p>Idade: {pet.idade} anos</p>
                 <p>Raça: {pet.raca}</p>
                 <p>Porte: {pet.porte}</p>
-                <a href={`/adocao/`} className="link-detalhes">
+                <a href={`/adocao/`} className={styles.linkDetalhes}>
                   Mais detalhes
                 </a>
               </div>

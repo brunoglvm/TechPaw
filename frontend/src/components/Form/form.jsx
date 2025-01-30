@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./form.css";
+import styles from "./form.module.css";
 
 export function Form() {
   const [nome, setNome] = useState("");
@@ -44,8 +44,8 @@ export function Form() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="adotante-form">
-      <div className="form-group">
+    <form onSubmit={handleSubmit} className={styles.adotanteForm}>
+      <div className={styles.formGroup}>
         <label htmlFor="nome">Nome</label>
         <input
           type="text"
@@ -58,7 +58,7 @@ export function Form() {
         {nomeError && <span style={{ color: "red" }}>{nomeError}</span>}
       </div>
 
-      <div className="form-group">
+      <div className={styles.formGroup}>
         <label htmlFor="email">Email</label>
         <input
           type="email"
@@ -70,7 +70,7 @@ export function Form() {
         />
       </div>
 
-      <div className="form-group">
+      <div className={styles.formGroup}>
         <label htmlFor="telefone">Telefone</label>
         <input
           type="text"
@@ -83,7 +83,7 @@ export function Form() {
         {telefoneError && <span style={{ color: "red" }}>{telefoneError}</span>}
       </div>
 
-      <div className="form-group">
+      <div className={styles.formGroup}>
         <label htmlFor="endereco">Endereço</label>
         <input
           type="text"
@@ -95,7 +95,7 @@ export function Form() {
         />
       </div>
 
-      <button type="submit" className="submit-btn">
+      <button type="submit" className={styles.submitBtn}>
         Cadastrar-se
       </button>
     </form>

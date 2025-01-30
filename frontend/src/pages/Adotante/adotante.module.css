@@ -1,11 +1,10 @@
-/* Adotante */
-.adotante-page {
+.adotantePage {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.adotante-main {
+.adotanteMain {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,8 +12,19 @@
   width: 100%;
 }
 
-.adotante-main h1 {
+.adotanteMain h1 {
   color: var(--dark-color);
   padding: 2rem;
   margin-top: 4rem;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.formImage {
+  max-width: 400px;
+  height: auto;
 }

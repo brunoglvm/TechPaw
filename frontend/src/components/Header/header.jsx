@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import "./header.css";
+import styles from "./header.module.css";
 
 export function Header() {
   return (
-    <header className="header">
+    <header className={styles.header}>
       <nav>
         <ul>
           <li>

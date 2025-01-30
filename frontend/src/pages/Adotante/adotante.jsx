@@ -1,5 +1,5 @@
 import React from "react";
-import "./adotante.css";
+import styles from "./adotante.module.css";
 
 import cachorro from "@/assets/cachorro.png";
 
@@ -8,15 +8,15 @@ import { Header } from "@/components/Header/header";
 
 function Adotante() {
   return (
-    <div className="adotante-page">
+    <div className={styles.adotantePage}>
       <Header />
-      <main className="adotante-main">
+      <main className={styles.adotanteMain}>
         <h1>Preencha o formulário abaixo para se cadastrar como adotante</h1>
-        <div className="form">
+        <div className={styles.form}>
           <img
             src={cachorro}
             alt="Imagem cachorro e dono"
-            className="form-image"
+            className={styles.formImage}
           />
           {}
           <Form />

@@ -1,37 +1,37 @@
-/* Filter */
-.filtro-container {
+.filtroContainer {
   position: fixed;
   background-color: var(--primary-color);
   padding: 4.25rem 2rem;
-  height: 100vh;
+  height: 100%;
   width: 18rem; /* Largura do filtro */
   z-index: 100;
 }
 
-.filtro-container h3 {
+.filtroContainer h3 {
   color: var(--light-color);
   margin: 1rem 1rem;
   font-size: 1.5rem;
 }
 
-.filtro-container form {
+.filtroContainer form {
   display: flex;
   flex-direction: column;
 }
 
-.filtro-container label {
+.filtroContainer label {
   color: var(--light-color);
   font-weight: var(--font-weight-reg);
   margin-bottom: 1.8rem;
 }
 
-.filtro-container select,
-.filtro-container input {
+.filtroContainer select,
+.filtroContainer input {
   width: 100%;
   padding: 0.8rem;
 }
 
-.pets-container ul {
+/* Lista de Pets */
+.petsContainer ul {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 4rem 2rem;
@@ -42,7 +42,7 @@
   margin: 7rem 0 3.5rem 20rem;
 }
 
-.pet-card {
+.petCard {
   background-color: var(--card-color);
   border-radius: 8px;
   box-shadow: 0 2px 5px var(--shadow-color);
@@ -56,27 +56,27 @@
   }
 }
 
-.pet-image {
+.petImage {
   width: 100%;
   height: 200px;
   object-fit: cover;
 }
 
-.pet-info {
+.petInfo {
   padding: 1rem;
 }
 
-.pet-info h3 {
+.petInfo h3 {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
 }
 
-.pet-info p {
+.petInfo p {
   margin-top: 0.25rem;
   color: var(--dark-color);
   font-size: 1rem;
 }
 
-.pet-info button {
+.petInfo button {
   margin-top: 1rem;
 }

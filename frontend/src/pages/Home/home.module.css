@@ -1,4 +1,3 @@
-/* Banner Home */
 .banner {
   height: 480px;
   background-color: var(--primary-color);
@@ -10,23 +9,23 @@
   padding-top: 4rem;
 }
 
-.banner-title {
+.bannerTitle {
   font-size: 4rem;
   font-weight: var(--font-weight-bd);
   margin-bottom: 1.2rem;
 }
 
-.banner-subtitle {
+.bannerSubtitle {
   font-size: 1.2rem;
   line-height: 1.4rem;
 }
 
 /* Por Que Adotar */
-.por-que-adotar {
+.porQueAdotar {
   margin-top: 3.5rem;
 }
 
-.por-que-adotar h2 {
+.porQueAdotar h2 {
   color: var(--dark-color);
   margin-bottom: 2rem;
 }
@@ -59,55 +58,55 @@
   color: var(--dark-color);
 }
 
-.list-item-icon {
+.listItemIcon {
   color: var(--secondary-color);
   margin-right: 0.5rem;
 }
 
 /* Animais Disponíveis */
-.animais-disponiveis {
+.animaisDisponiveis {
   margin: 3.5rem 0;
   padding: 0 1.25rem;
 }
 
-.animais-disponiveis h2 {
+.animaisDisponiveis h2 {
   color: var(--dark-color);
   margin-bottom: 2rem;
 }
 
-.animais-grid {
+.animaisGrid {
   display: flex;
-  flex-wrap: wrap; /* Permite quebrar a linha se não houver espaço suficiente */
-  gap: 1.25rem; /* Espaçamento entre os cards */
-  justify-content: center; /* Centraliza os cards */
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  justify-content: center;
 }
 
-.animal-card {
+.animalCard {
   background-color: var(--card-color);
   border-radius: 8px;
   box-shadow: 0 4px 8px var(--shadow-color);
   overflow: hidden;
-  width: calc(20% - 20px); /* Garantindo que 5 cards caibam na linha */
+  width: calc(20% - 20px);
   text-align: center;
   transition: transform 0.3s ease;
   padding-bottom: 1.125rem;
-
-  &:hover {
-    transform: translateY(-5px);
-  }
 }
 
-.animal-card img {
+.animalCard:hover {
+  transform: translateY(-5px);
+}
+
+.animalCard img {
   width: 100%;
   height: auto;
 }
 
-.animal-card h3 {
+.animalCard h3 {
   font-weight: var(--font-weight-md);
   margin: 0.625rem 0;
 }
 
-.link-detalhes {
+.linkDetalhes {
   font-family: var(--font-family-secondary);
   font-weight: var(--font-weight-bd);
   color: var(--highlight-color);
@@ -117,32 +116,32 @@
   border: 2px solid var(--highlight-color);
   border-radius: 8px;
   transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
 
-  &:hover {
-    background-color: var(--highlight-color);
-    color: var(--light-color);
-  }
+.linkDetalhes:hover {
+  background-color: var(--highlight-color);
+  color: var(--light-color);
 }
 
 /* Informações Educativas */
-.informacoes-educativas {
+.informacoesEducativas {
   background-color: var(--primary-color);
   border-radius: 8px 8px 0 0;
   padding: 2rem;
 }
 
-.informacoes-educativas h2 {
+.informacoesEducativas h2 {
   color: var(--light-color);
   margin-bottom: 2rem;
 }
 
-.educacao-grid {
+.educacaoGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 
-.educacao-card {
+.educacaoCard {
   background-color: var(--light-color);
   padding: 1rem;
   text-align: center;
@@ -151,12 +150,12 @@
   box-shadow: 0 4px 8px var(--shadow-color);
 }
 
-.educacao-card h3 {
+.educacaoCard h3 {
   color: var(--dark-color);
   margin: 0.5rem 0;
 }
 
-.educacao-card img {
+.educacaoCard img {
   width: 60%;
   height: 20rem;
   object-fit: contain;
@@ -178,23 +177,56 @@
   margin-bottom: 2rem;
 }
 
-.form-contato {
+.formContato {
   display: flex;
   flex-direction: column;
   max-width: 500px;
   margin: 0 auto;
 }
 
-.form-contato input {
+.formContato input {
   width: 100%;
   height: 44px;
   padding: 0.875rem;
   margin-bottom: 1.125rem;
 }
 
-.form-contato textarea {
+.formContato textarea {
   width: 100%;
   height: 88px;
   padding: 0.875rem;
   margin-bottom: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .educacaoGrid {
+    margin-left: 2rem;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .card h3,
+  .educacaoCard h3 {
+    font-size: 1.3rem;
+  }
+
+  .card ul li,
+  .educacaoCard p {
+    font-size: 1rem;
+  }
+
+  .cards,
+  .animaisGrid,
+  .educacaoGrid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card,
+  .animalCard,
+  .educacaoCard {
+    width: 90%;
+    margin-bottom: 1rem;
+  }
 }
