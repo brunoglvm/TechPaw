@@ -10,7 +10,6 @@
   gap: 4rem 2rem;
   max-width: 80%;
   width: 100%;
-  text-align: center;
   justify-items: center;
   margin: 7rem 0 3.5rem 20rem;
 }
@@ -18,15 +17,15 @@
 .petCard {
   background-color: var(--card-color);
   border-radius: 8px;
-  box-shadow: 0 2px 5px var(--shadow-color);
+  box-shadow: 0 4px 8px var(--shadow-color);
   overflow: hidden;
   width: 20rem;
-  border: 1px solid var(--border-color);
+  text-align: center;
   transition: transform 0.3s ease;
-}
 
-.petCard:hover {
-  transform: translateY(-5px);
+  &:hover {
+    transform: translateY(-5px);
+  }
 }
 
 .petImage {

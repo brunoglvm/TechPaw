@@ -46,11 +46,12 @@ export function Form() {
   return (
     <form onSubmit={handleSubmit} className={styles.adotanteForm}>
       <div className={styles.formGroup}>
-        <label htmlFor="nome">Nome</label>
+        <label htmlFor="name">Nome</label>
         <input
           type="text"
-          id="nome"
-          placeholder="Insira seu nome completo"
+          name="name"
+          id="name"
+          placeholder="Digite seu nome completo"
           value={nome}
           onChange={handleNomeChange}
           required
@@ -62,8 +63,9 @@ export function Form() {
         <label htmlFor="email">Email</label>
         <input
           type="email"
+          name="email"
           id="email"
-          placeholder="Insira seu email"
+          placeholder="Digite seu email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
@@ -71,11 +73,12 @@ export function Form() {
       </div>
 
       <div className={styles.formGroup}>
-        <label htmlFor="telefone">Telefone</label>
+        <label htmlFor="phone">Telefone</label>
         <input
-          type="text"
-          id="telefone"
-          placeholder="Insira seu telefone"
+          type="tel"
+          name="phone"
+          id="phone"
+          placeholder="Digite seu telefone"
           value={telefone}
           onChange={handleTelefoneChange}
           required
@@ -84,11 +87,12 @@ export function Form() {
       </div>
 
       <div className={styles.formGroup}>
-        <label htmlFor="endereco">Endereço</label>
+        <label htmlFor="address">Endereço</label>
         <input
           type="text"
-          id="endereco"
-          placeholder="Insira seu endereço"
+          name="address"
+          id="address"
+          placeholder="Digite seu endereço"
           value={endereco}
           onChange={(e) => setEndereco(e.target.value)}
           required

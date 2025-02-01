@@ -88,12 +88,12 @@
   overflow: hidden;
   width: calc(20% - 20px);
   text-align: center;
-  transition: transform 0.3s ease;
   padding-bottom: 1.125rem;
-}
+  transition: transform 0.3s ease;
 
-.animalCard:hover {
-  transform: translateY(-5px);
+  &:hover {
+    transform: translateY(-5px);
+  }
 }
 
 .animalCard img {
@@ -104,23 +104,6 @@
 .animalCard h3 {
   font-weight: var(--font-weight-md);
   margin: 0.625rem 0;
-}
-
-.linkDetalhes {
-  font-family: var(--font-family-secondary);
-  font-weight: var(--font-weight-bd);
-  color: var(--highlight-color);
-  margin-top: 1rem;
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  border: 2px solid var(--highlight-color);
-  border-radius: 8px;
-  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
-}
-
-.linkDetalhes:hover {
-  background-color: var(--highlight-color);
-  color: var(--light-color);
 }
 
 /* Informações Educativas */

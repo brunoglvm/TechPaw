@@ -15,7 +15,7 @@ function Adotante() {
         <div className={styles.form}>
           <img
             src={cachorro}
-            alt="Imagem cachorro e dono"
+            alt="Cachorro com o seu dono"
             className={styles.formImage}
           />
           {}

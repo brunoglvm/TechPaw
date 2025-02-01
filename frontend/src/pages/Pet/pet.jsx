@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styles from "./pet.module.css";
+
 import { Header } from "@/components/Header/header";
+import { RouteBtn } from "@/components/RouteBtn/route-btn";
 
 function Pet({ onAddPet, pets = [] }) {
   const [formData, setFormData] = useState({
@@ -46,47 +48,56 @@ function Pet({ onAddPet, pets = [] }) {
         <h2 className={styles.petFormTitle}>Cadastro de Pet</h2>
 
         <div className={styles.formGroup}>
-          <label className={styles.formLabel}>Nome do Pet</label>
+          <label htmlFor="name" className={styles.formLabel}>
+            Nome
+          </label>
           <input
             type="text"
-            name="nome"
+            name="name"
+            id="name"
             className={styles.formInput}
-            placeholder="Nome do Pet"
+            placeholder="Insira o nome do pet"
             value={formData.nome}
             onChange={handleChange}
           />
         </div>
 
         <div className={styles.formGroup}>
-          <label className={styles.formLabel}>Espécie</label>
+          <label htmlFor="species" className={styles.formLabel}>
+            Espécie
+          </label>
           <input
             type="text"
-            name="especie"
-            placeholder="Espécie"
+            name="species"
+            id="species"
+            placeholder="Insira a espécie do pet"
             value={formData.especie}
             onChange={handleChange}
           />
         </div>
 
         <div className={styles.formGroup}>
-          <label className={styles.formLabel}>Idade</label>
+          <label htmlFor="age" className={styles.formLabel}>
+            Idade
+          </label>
           <input
             type="number"
-            name="idade"
-            placeholder="Idade"
+            name="age"
+            id="age"
+            placeholder="Insira a idade do pet"
             value={formData.idade}
             onChange={handleChange}
           />
         </div>
 
         <div className={styles.formGroup}>
-          <label className={styles.formLabel} htmlFor="descricao">
+          <label htmlFor="description" className={styles.formLabel}>
             Descrição
           </label>
           <textarea
-            name="descricao"
-            id="descricao"
-            placeholder="Descrição"
+            name="description"
+            id="description"
+            placeholder="Insira a descrição do pet"
             value={formData.descricao}
             onChange={handleChange}
             rows="4"
@@ -94,10 +105,13 @@ function Pet({ onAddPet, pets = [] }) {
         </div>
 
         <div className={styles.formGroup}>
-          <label className={styles.formLabel}>Foto</label>
+          <label htmlFor="photo" className={styles.formLabel}>
+            Foto
+          </label>
           <input
             type="file"
-            name="foto"
+            name="photo"
+            id="photo"
             accept="image/*"
             onChange={handleChange}
           />
@@ -135,9 +149,7 @@ function Pet({ onAddPet, pets = [] }) {
                 <p>Idade: {pet.idade} anos</p>
                 <p>Raça: {pet.raca}</p>
                 <p>Porte: {pet.porte}</p>
-                <a href={`/adocao/`} className={styles.linkDetalhes}>
-                  Mais detalhes
-                </a>
+                <RouteBtn to={"/adocao"}>Mais detalhes</RouteBtn>
               </div>
             ))
           ) : (

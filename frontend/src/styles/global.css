@@ -39,6 +39,12 @@ a {
   font-weight: var(--font-weight-sb);
 }
 
+label {
+  font-family: var(--font-family-secondary);
+  font-weight: var(--font-weight-md);
+  color: var(--dark-color);
+}
+
 input,
 textarea,
 select {
@@ -70,11 +76,6 @@ button {
   }
 }
 
-.submit-btn {
-  width: 80%;
-  margin: 2.5rem;
-}
-
 :is(a, input, textarea, button, select):focus-visible,
 select:focus {
   outline: none;
@@ -83,5 +84,6 @@ select:focus {
 }
 
 :is(input, textarea)::placeholder {
+  font-size: 1rem;
   color: var(--placeholder-color);
 }

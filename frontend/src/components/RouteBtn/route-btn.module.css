@@ -1,0 +1,16 @@
+.routeBtn {
+  font-family: var(--font-family-secondary);
+  font-weight: var(--font-weight-bd);
+  color: var(--highlight-color);
+  margin-top: 0.75rem;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--highlight-color);
+  border-radius: 8px;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: var(--highlight-color);
+    color: var(--light-color);
+  }
+}

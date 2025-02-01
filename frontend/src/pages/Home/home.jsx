@@ -6,6 +6,7 @@ import { faStarOfLife } from "@fortawesome/free-solid-svg-icons";
 
 import { Header } from "@/components/Header/header";
 import { Footer } from "@/components/Footer/footer";
+import { RouteBtn } from "@/components/RouteBtn/route-btn";
 
 import gatoBanner from "@/assets/gato2.png";
 import cachorroFeliz from "@/assets/cachorro-feliz.png";
@@ -94,7 +95,7 @@ function Home() {
         <p className={styles.bannerSubtitle}>
           Encontre seu melhor amigo de quatro patas aqui!
         </p>
-        <img src={gatoBanner} alt="Imagem de um gato com seu dono" />
+        <img src={gatoBanner} alt="Gato com o seu dono" />
       </section>
 
       {/* Por Que Adotar? */}
@@ -198,9 +199,7 @@ function Home() {
               <p>Idade: {pet.idade} anos</p>
               <p>Raça: {pet.raca}</p>
               <p>Porte: {pet.porte}</p>
-              <a href={`/adocao/`} className={styles.linkDetalhes}>
-                Mais detalhes
-              </a>
+              <RouteBtn to={"/adocao"}>Mais detalhes</RouteBtn>
             </div>
           ))}
         </div>
@@ -254,24 +253,24 @@ function Home() {
 
           <input
             type="text"
-            id="name"
             name="name"
-            placeholder="Seu Nome"
+            id="name"
+            placeholder="Digite seu nome"
             required
           />
 
           <input
             type="email"
-            id="email"
             name="email"
-            placeholder="Seu E-mail"
+            id="email"
+            placeholder="Digite seu email"
             required
           />
 
           <textarea
-            id="message"
             name="message"
-            placeholder="Sua Mensagem"
+            id="message"
+            placeholder="Digite sua mensagem"
             required
           />
 
