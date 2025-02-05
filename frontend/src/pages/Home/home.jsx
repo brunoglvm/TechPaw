@@ -6,70 +6,68 @@ import { faStarOfLife } from "@fortawesome/free-solid-svg-icons";
 
 import { Header } from "@/components/Header/header";
 import { Footer } from "@/components/Footer/footer";
+import { Card } from "@/components/Card/card";
 import { RouteBtn } from "@/components/RouteBtn/route-btn";
 
 import gatoBanner from "@/assets/gato2.png";
 import cachorroFeliz from "@/assets/cachorro-feliz.png";
 import cachorro2 from "@/assets/cachorro2.png";
 import cachorro1 from "@/assets/cachorro1.png";
-import tomFoto from "@/assets/tom.jpg";
-import miloFoto from "@/assets/milo.jpg";
-import miaFoto from "@/assets/mia.jpg";
-import maxFoto from "@/assets/max.jpg";
-import charlieFoto from "@/assets/charlie.jpg";
+import dogImage from "@/assets/card/cachorro.jpg";
+import catImage from "@/assets/card/gato.jpg";
 
 // Função para obter os pets disponíveis
 const buscarPets = async () => {
   return [
     {
       id: 1,
-      nome: "Tom",
-      raca: "Vira-lata",
+      nome: "Alex",
+      especie: "Cachorro",
       porte: "Pequeno",
       idade: 2,
-      sexo: "Macho",
-      tipo: "Cachorro",
-      foto: tomFoto,
+      foto: dogImage,
+      descricao:
+        "Alex é um cachorro pequeno e muito amigável. Adora brincar e é ótimo com crianças.",
     },
     {
       id: 2,
-      nome: "Milo",
-      raca: "Bulldog",
+      nome: "Bailey",
+      especie: "Cachorro",
       porte: "Médio",
       idade: 3,
-      sexo: "Macho",
-      tipo: "Cachorro",
-      foto: miloFoto,
+      foto: dogImage,
+      descricao:
+        "Bailey é um cachorro de porte médio, muito leal e protetor. Perfeito para famílias.",
     },
     {
       id: 3,
-      nome: "Mia",
-      raca: "Persa",
+      nome: "Charlie",
+      especie: "Gato",
       porte: "Pequeno",
       idade: 1,
-      sexo: "Fêmea",
-      tipo: "Gato",
-      foto: miaFoto,
+      foto: catImage,
+      descricao:
+        "Charlie é um gato pequeno e curioso. Adora explorar e é muito carinhoso.",
     },
     {
       id: 4,
-      nome: "Max",
-      raca: "Golden Retriever",
+      nome: "Riley",
+      especie: "Cachorro",
       porte: "Grande",
       idade: 4,
-      sexo: "Macho",
-      tipo: "Cachorro",
-      foto: maxFoto,
+      foto: dogImage,
+      descricao:
+        "Riley é um cachorro grande e enérgico. Precisa de espaço para correr e brincar.",
     },
     {
       id: 5,
-      nome: "Charlie",
-      raca: "Siamês",
+      nome: "Max",
+      especie: "Gato",
       porte: "Pequeno",
       idade: 2,
-      sexo: "Macho",
-      tipo: "Gato",
-      foto: charlieFoto,
+      foto: catImage,
+      descricao:
+        "Max é um gato pequeno e tranquilo. Gosta de descansar em lugares aconchegantes.",
     },
   ];
 };
@@ -188,20 +186,9 @@ function Home() {
       <section className={styles.animaisDisponiveis}>
         <h2>Animais Disponíveis para Adoção</h2>
         <div className={styles.animaisGrid}>
-          {pets.map((pet) => (
-            <div key={pet.id} className={styles.animalCard}>
-              <img
-                src={pet.foto}
-                alt={pet.nome}
-                className={styles.animalImage}
-              />
-              <h3>{pet.nome}</h3>
-              <p>Idade: {pet.idade} anos</p>
-              <p>Raça: {pet.raca}</p>
-              <p>Porte: {pet.porte}</p>
-              <RouteBtn to={"/adocao"}>Mais detalhes</RouteBtn>
-            </div>
-          ))}
+          <Card pets={pets}>
+            <RouteBtn to={"/adocao"}>Mais detalhes</RouteBtn>
+          </Card>
         </div>
       </section>
 

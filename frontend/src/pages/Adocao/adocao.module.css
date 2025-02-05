@@ -3,13 +3,13 @@
   background-color: var(--primary-color);
   padding: 4.25rem 2rem;
   height: 100%;
-  width: 18rem; /* Largura do filtro */
+  width: 18rem;
   z-index: 100;
 }
 
 .filtroContainer h3 {
   color: var(--light-color);
-  margin: 1rem 1rem;
+  margin: 2.375rem auto;
   font-size: 1.5rem;
 }
 
@@ -28,6 +28,7 @@
 .filtroContainer input {
   width: 100%;
   padding: 0.8rem;
+  margin-top: 0.5rem;
 }
 
 /* Lista de Pets */
@@ -74,8 +75,4 @@
   margin-top: 0.25rem;
   color: var(--dark-color);
   font-size: 1rem;
-}
-
-.petInfo button {
-  margin-top: 1rem;
 }

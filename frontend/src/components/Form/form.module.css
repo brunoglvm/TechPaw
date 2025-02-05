@@ -18,7 +18,7 @@
 .adotanteForm {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.125rem;
   max-width: 500px;
   width: 100%;
   padding: 20px;
@@ -39,14 +39,11 @@
   flex-direction: column;
 }
 
-.formGroup label {
-  margin-bottom: 0.5rem;
-}
-
 .formGroup input,
 .formGroup textarea {
-  padding: 0.8rem;
   border: 1px solid var(--border-color);
+  padding: 0.8rem;
+  margin-top: 0.5rem;
   border-radius: 4px;
   resize: none;
 }
@@ -56,6 +53,10 @@
   height: 40px;
   padding: 8px;
   font-size: 16px;
+}
+
+.submitBtn {
+  margin-top: 0.375rem;
 }
 
 @media screen and (max-width: 768px) {

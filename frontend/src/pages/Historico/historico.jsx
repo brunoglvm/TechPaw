@@ -1,12 +1,8 @@
 import React from "react";
 import styles from "./historico.module.css";
 
-import auroraImage from "@/assets/aurora.jpg";
-import bruceImage from "@/assets/bruce.jpg";
-import floquinhoImage from "@/assets/floquinho.jpg";
-import lukeImage from "@/assets/luke.jpg";
-import marleyImage from "@/assets/marley.jpg";
-import selinaImage from "@/assets/selina.jpg";
+import dogImage from "@/assets/card/cachorro.jpg";
+import catImage from "@/assets/card/gato.jpg";
 
 import { Header } from "@/components/Header/header";
 
@@ -18,7 +14,7 @@ function Historico() {
       especie: "Gato",
       idade: 1,
       sexo: "Fêmea",
-      foto: auroraImage,
+      foto: catImage,
       data: "10-05-2024",
     },
     {
@@ -27,7 +23,7 @@ function Historico() {
       especie: "Cachorro",
       idade: 3,
       sexo: "Macho",
-      foto: bruceImage,
+      foto: dogImage,
       data: "12-09-2024",
     },
     {
@@ -36,7 +32,7 @@ function Historico() {
       especie: "Gato",
       idade: 1,
       sexo: "Macho",
-      foto: floquinhoImage,
+      foto: catImage,
       data: "04-07-2024",
     },
     {
@@ -45,7 +41,7 @@ function Historico() {
       especie: "Cachorro",
       idade: 2,
       sexo: "Macho",
-      foto: lukeImage,
+      foto: dogImage,
       data: "29-08-2024",
     },
     {
@@ -54,7 +50,7 @@ function Historico() {
       especie: "Cachorro",
       idade: 1,
       sexo: "Macho",
-      foto: marleyImage,
+      foto: dogImage,
       data: "18-10-2024",
     },
     {
@@ -63,7 +59,7 @@ function Historico() {
       especie: "Gato",
       idade: 4,
       sexo: "Fêmea",
-      foto: selinaImage,
+      foto: catImage,
       data: "09-02-2024",
     },
   ];
