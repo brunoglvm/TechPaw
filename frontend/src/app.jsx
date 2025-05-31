@@ -1,14 +1,9 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import "./styles/vars.css";
-import "./styles/global.css";
+import "./styles/index.css";
 
-import Home from "./pages/Home/home";
-import Adotante from "./pages/Adotante/adotante";
-import Adocao from "./pages/Adocao/adocao";
-import Historico from "./pages/Historico/historico";
-import Pet from "./pages/Pet/pet";
+import { Home, Adotante, Adocao, Historico, Pet } from "./pages";
 
 function App() {
   const [pets, setPets] = useState([]); // Estado para armazenar os pets
